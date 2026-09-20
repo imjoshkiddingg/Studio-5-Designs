@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -48,10 +49,17 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="text-lg font-medium tracking-tight text-ink"
+          className="flex items-center"
           aria-label={`${siteConfig.name} home`}
         >
-          Studio 5 Designs<span className="text-accent">.</span>
+          <Image
+            src="/studio-5-logo.png"
+            alt={siteConfig.name}
+            width={160}
+            height={40}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         <ul className="hidden items-center gap-9 md:flex">
@@ -158,9 +166,13 @@ export function Navbar() {
               className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col bg-canvas p-6"
             >
               <div className="flex items-center justify-between">
-                <span className="text-lg font-medium tracking-tight">
-                  Studio 5 Designs<span className="text-accent">.</span>
-                </span>
+                <Image
+                  src="/studio-5-logo.png"
+                  alt={siteConfig.name}
+                  width={160}
+                  height={40}
+                  className="h-9 w-auto"
+                />
                 <button
                   type="button"
                   onClick={() => setDrawerOpen(false)}

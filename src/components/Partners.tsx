@@ -21,11 +21,11 @@ export function Partners() {
         </div>
 
         <Reveal delay={0.1}>
-          <ul className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
             {partners.map((partner) => (
               <li
                 key={partner.name}
-                className="group flex aspect-[3/2] items-center justify-center bg-canvas p-6"
+                className="flex aspect-[3/2] items-center justify-center p-6"
                 title={partner.name}
               >
                 {partner.logo ? (
@@ -34,10 +34,10 @@ export function Partners() {
                     alt={partner.name}
                     width={140}
                     height={72}
-                    className="max-h-12 w-auto max-w-[80%] object-contain opacity-55 grayscale transition-all duration-500 ease-editorial group-hover:opacity-100 group-hover:grayscale-0"
+                    className="max-h-12 w-auto max-w-[80%] object-contain"
                   />
                 ) : (
-                  <span className="text-center text-sm font-medium text-muted transition-colors group-hover:text-ink">
+                  <span className="text-center text-sm font-medium text-ink">
                     {partner.name}
                   </span>
                 )}
