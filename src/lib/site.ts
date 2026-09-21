@@ -192,6 +192,10 @@ export const pillars: Pillar[] = [
     description: "Over 50 years of designing from output to permanence.",
   },
   {
+    title: "Innovation",
+    description: "Designing forward — reimagining how stories take form.",
+  },
+  {
     title: "Culture",
     description: "Preserving generational craftsmanship, identity, and legacy.",
   },

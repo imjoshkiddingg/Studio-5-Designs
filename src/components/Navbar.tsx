@@ -53,12 +53,12 @@ export function Navbar() {
           aria-label={`${siteConfig.name} home`}
         >
           <Image
-            src="/studio-5-logo.png"
+            src="/studio-5-logo2.png"
             alt={siteConfig.name}
-            width={160}
-            height={40}
+            width={220}
+            height={56}
             priority
-            className="h-9 w-auto"
+            className="h-12 w-auto md:h-14"
           />
         </Link>
 
@@ -167,7 +167,7 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between">
                 <Image
-                  src="/studio-5-logo.png"
+                  src="/studio-5-logo2.png"
                   alt={siteConfig.name}
                   width={160}
                   height={40}

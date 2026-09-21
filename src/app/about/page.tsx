@@ -38,11 +38,19 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.06}>
                 <p>
-                  Our philosophy is simple: unwavering clarity of Purpose,
-                  creating with Excellence, deep respect for Culture, and a
-                  fierce commitment to authentic Trust. We transform milestones
-                  into shared human experiences — crafted with care, built with
-                  precision, and created to leave a lasting legacy.
+                  Our philosophy is simple: unwavering clarity of{" "}
+                  <span className="font-semibold text-ink">Purpose</span>,
+                  creating with{" "}
+                  <span className="font-semibold text-ink">Excellence</span>,
+                  designing with{" "}
+                  <span className="font-semibold text-ink">Innovation</span>,
+                  deep respect for{" "}
+                  <span className="font-semibold text-ink">Culture</span>, and a
+                  fierce commitment to authentic{" "}
+                  <span className="font-semibold text-ink">Trust</span>. We
+                  transform milestones into shared human experiences — crafted
+                  with care, built with precision, and created to leave a lasting
+                  legacy.
                 </p>
               </Reveal>
             </div>
@@ -55,7 +63,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow">Strategic Pillars</p>
           </Reveal>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
             {pillars.map((pillar, i) => (
               <Reveal
                 key={pillar.title}

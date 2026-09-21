@@ -36,10 +36,14 @@ export function About() {
             <Reveal delay={0.1}>
               <p>
                 Our philosophy is simple: unwavering clarity of{" "}
-                <span className="text-ink">Purpose</span>, creating with{" "}
-                <span className="text-ink">Excellence</span>, deep respect for{" "}
-                <span className="text-ink">Culture</span>, and a fierce commitment
-                to authentic <span className="text-ink">Trust</span>. We transform
+                <span className="font-semibold text-ink">Purpose</span>, creating
+                with <span className="font-semibold text-ink">Excellence</span>,
+                designing with{" "}
+                <span className="font-semibold text-ink">Innovation</span>, deep
+                respect for{" "}
+                <span className="font-semibold text-ink">Culture</span>, and a
+                fierce commitment to authentic{" "}
+                <span className="font-semibold text-ink">Trust</span>. We transform
                 milestones into shared human experiences — crafted with care, built
                 with precision, and created to leave a lasting legacy.
               </p>
