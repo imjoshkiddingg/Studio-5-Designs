@@ -34,8 +34,6 @@ next-env.d.ts
 # original source assets (copies used by the app live in public/)
 /Logos
 /*.pdf
-/DLSU Centennial book.jpg
-/Joy For Tomorrow.jpg
-/Kairos Book.png
-/Yaman.jpg
-/Studio 5 Logo.png
+/*.jpg
+/*.jpeg
+/*.png
