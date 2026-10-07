@@ -1,18 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Search, X } from "lucide-react";
-import { navLinks, siteConfig } from "@/lib/site";
+import { ArrowUpRight, Menu, Search, X } from "lucide-react";
+import { navLinks, siteConfig, searchSite } from "@/lib/site";
 
 export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  const results = useMemo(() => searchSite(query), [query]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -21,10 +25,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close drawer on route change
+  // Close drawer/search on route change
   useEffect(() => {
     setDrawerOpen(false);
     setSearchOpen(false);
+    setQuery("");
   }, [pathname]);
 
   // Lock body scroll while drawer open
@@ -112,16 +117,31 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Search bar */}
+      {/* Search overlay dropdown */}
       <AnimatePresence>
         {searchOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-line bg-canvas"
-          >
+          <>
+            {/* Backdrop — closes on outside click */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => {
+                setSearchOpen(false);
+                setQuery("");
+              }}
+              className="fixed inset-0 top-20 -z-10 bg-ink-deep/20 backdrop-blur-[2px]"
+              aria-hidden="true"
+            />
+            {/* Panel — floats over content, does not push the page */}
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-x-0 top-full border-t border-line bg-canvas shadow-lg"
+            >
             <div className="container-editorial py-5">
               <label htmlFor="site-search" className="sr-only">
                 Search the site
@@ -132,12 +152,63 @@ export function Navbar() {
                   id="site-search"
                   type="search"
                   autoFocus
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") {
+                      setSearchOpen(false);
+                      setQuery("");
+                    }
+                    if (e.key === "Enter" && results[0]) {
+                      router.push(results[0].href);
+                    }
+                  }}
                   placeholder="Search work, services, and case studies…"
                   className="w-full bg-transparent text-base text-ink outline-none placeholder:text-muted"
+                  role="combobox"
+                  aria-expanded={results.length > 0}
+                  aria-controls="search-results"
                 />
               </div>
+
+              {/* Results */}
+              {query.trim() && (
+                <ul id="search-results" className="mt-4 flex flex-col">
+                  {results.length === 0 ? (
+                    <li className="py-3 text-sm text-muted">
+                      No results for &ldquo;{query}&rdquo;.
+                    </li>
+                  ) : (
+                    results.map((item) => (
+                      <li key={`${item.group}-${item.href}-${item.title}`}>
+                        <Link
+                          href={item.href}
+                          className="group flex items-center justify-between gap-4 border-b border-line py-3 last:border-0"
+                        >
+                          <span className="flex flex-col">
+                            <span className="text-sm text-ink">{item.title}</span>
+                            <span className="text-xs text-muted">
+                              {item.subtitle}
+                            </span>
+                          </span>
+                          <span className="flex items-center gap-3">
+                            <span className="hidden text-[10px] uppercase tracking-[0.15em] text-muted sm:block">
+                              {item.group}
+                            </span>
+                            <ArrowUpRight
+                              className="h-4 w-4 text-line transition-colors group-hover:text-accent"
+                              strokeWidth={1.6}
+                            />
+                          </span>
+                        </Link>
+                      </li>
+                    ))
+                  )}
+                </ul>
+              )}
             </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 

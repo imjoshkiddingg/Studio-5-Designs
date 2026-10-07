@@ -181,22 +181,22 @@ export const caseStudies: CaseStudy[] = [
       author: "Nina Aguas",
       role: "Executive Chairperson, InLife",
     },
-    hero: "/covers/kairos.png",
+    hero: "/covers/kairos-1.jpg",
     cardImage: "/covers/kairos-1.jpg",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=2000&q=80",
-        caption: "Spread overview — archival photography and editorial typography",
+        src: "/covers/kairos.png",
+        caption: "Cover — commemorative volume for InLife's 115th anniversary",
         size: "full",
-      },
-      {
-        src: "/covers/kairos-1.jpg",
-        caption: "Chapter spreads — portrait photography and narrative typography",
-        size: "half",
       },
       {
         src: "/covers/kairos-2.jpg",
         caption: "Interior pages — editorial layout and visual storytelling",
+        size: "half",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
+        caption: "Typography system — display serif with intentional leading",
         size: "half",
       },
     ],
@@ -278,15 +278,15 @@ export const caseStudies: CaseStudy[] = [
     outcome:
       "YAMAN was presented to international delegates at the BSP's annual numismatic conference and distributed to partner institutions across Asia-Pacific. It is now part of several national library collections and is cited as a reference standard for Philippine heritage publications.",
     awards: [
-      "Best Heritage Publication — ASEAN Design Excellence Awards",
-      "Gold — Philippine Book Publishers Association",
+      "Silver Award — Graphis Design Annual 2022",
+      "Finalist — 39th National Book Awards",
     ],
     narrative: [
       "YAMAN required both rigor and reverence — a scholarly record of Philippine money that could also move a general reader.",
       "We treated each artifact as a subject worthy of portraiture, pairing meticulous macro photography with intentional typography and generous white space.",
       "The volume celebrates identity, memory, and living heritage — a permanent form for a national story.",
     ],
-    hero: "/covers/yaman.jpg",
+    hero: "/covers/yaman-book.jpg",
     gallery: [
       {
         src: "/covers/yaman.jpg",
@@ -392,7 +392,9 @@ export const caseStudies: CaseStudy[] = [
       "A bright, optimistic visual system balances charts and frameworks with photography of the people and communities the group serves. Typography and pacing keep the document warm and legible, so a first-time reader and a sustainability analyst both find their footing.",
     outcome:
       "Joy for Tomorrow gave the Jollibee Group a sustainability publication its stakeholders actually wanted to read — accountability expressed as a story of shared responsibility rather than a box-ticking exercise.",
-    awards: [],
+    awards: [
+      "Award for Excellence in Sustainability Reporting — 10th Global Good Governance (3G) Awards",
+    ],
     narrative: [
       "Jollibee's sustainability report had to carry serious ESG disclosure while sounding like the most human brand in the room.",
       "We balanced the frameworks and the data with warmth — opening each section with the people behind the numbers.",
@@ -406,12 +408,12 @@ export const caseStudies: CaseStudy[] = [
         size: "full",
       },
       {
-        src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+        src: "/covers/joy-for-tomorrow-1.jpg",
         caption: "ESG frameworks organised for clarity and confidence",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
+        src: "/covers/joy-for-tomorrow-2.jpg",
         caption: "Community photography — the human side of the data",
         size: "half",
       },
@@ -524,6 +526,61 @@ export const caseStudies: CaseStudy[] = [
     ],
     relatedProjects: ["smgp-brand-identity", "bpi-building-a-better-philippines"],
   },
+
+  {
+    slug: "bcda-one-clark-annual-report",
+    client: "Bases Conversion and Development Authority",
+    project: "One Clark 2023 Annual Report",
+    sector: "Government / Heritage",
+    industry: "Government & Infrastructure Development",
+    services: [
+      "Annual Report Design",
+      "Editorial Direction",
+      "Data Visualisation",
+      "Photography Art Direction",
+      "Print Production Management",
+    ],
+    context:
+      "An annual report presenting a year of nation-building infrastructure as a single, coherent story of progress.",
+    challenge:
+      "The Bases Conversion and Development Authority manages some of the country's most ambitious development projects. Its annual report had to account for a complex year of infrastructure, investment, and public mandate — to government stakeholders and the public alike — without reducing it to a ledger of figures.",
+    approach:
+      "We organised the report around the idea of One Clark: many projects, agencies, and communities moving as a single effort. The structure moves from mandate to measurable progress, letting each initiative connect back to the authority's broader role in national development.",
+    designSolution:
+      "A clear editorial grid holds dense development and financial data in order, while commissioned photography of sites and communities grounds the mandate in tangible progress. A confident, institutional palette signals public accountability, and infographics translate large-scale metrics into statements a general reader can follow.",
+    outcome:
+      "The One Clark 2023 Annual Report gave the BCDA a publication that communicates the scale of its mandate with clarity and credibility — a public record of nation-building that stakeholders can actually read and trust.",
+    awards: [
+      "Silver Stevie Award — International Business Awards 2025",
+      "Silver Stevie Award — Asia-Pacific Stevie Awards 2025",
+      "Gold Quill Award of Excellence — International Association of Business Communicators",
+      "Gold Anvil Award and Platinum Award Finalist — 60th Anvil Awards",
+    ],
+    narrative: [
+      "The BCDA needed its annual report to make a complex year of nation-building legible to government stakeholders and the public at once.",
+      "We built the report around One Clark — many projects moving as a single effort — and structured it to connect every initiative back to the authority's broader mandate.",
+      "The result is a public record that holds the scale of the work and the clarity the public deserves in the same frame.",
+    ],
+    hero: "/covers/bcda-1.png",
+    gallery: [
+      {
+        src: "/covers/bcda-1.png",
+        caption: "Cover — One Clark 2023 Annual Report",
+        size: "full",
+      },
+      {
+        src: "/covers/bcda-2.jpg",
+        caption: "Development and financial data organised for clarity",
+        size: "half",
+      },
+      {
+        src: "/covers/bcda-3.jpg",
+        caption: "Site and community photography — progress made tangible",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["bpi-building-a-better-philippines", "mgen-energy-in-synergy"],
+  },
 ];
 
 // ─── Pillars ──────────────────────────────────────────────────────────────────
@@ -588,7 +645,7 @@ export const services: Service[] = [
     tagline: "A centennial deserves more than a brochure.",
     copy:
       "When an institution marks a milestone worth remembering, we design the book that carries it forward. We handle the editorial direction, the archival research, the photography art direction, and the print production — producing volumes that are held and revisited, not shelved and forgotten.",
-    visual: "/covers/yaman.jpg",
+    visual: "/covers/yaman-book.jpg",
     visualCaption: "BSP — YAMAN: History and Heritage in Philippine Money",
   },
   {
@@ -619,6 +676,96 @@ export type Partner = {
   name: string;
   logo?: string;
 };
+
+// ─── Search Index ─────────────────────────────────────────────────────────────
+
+export type SearchItem = {
+  title: string;
+  subtitle: string;
+  href: string;
+  group: "Case Study" | "Service" | "Page";
+  /** Extra terms to match against (not displayed) */
+  keywords: string;
+};
+
+export const searchIndex: SearchItem[] = [
+  // Case studies
+  ...caseStudies.map((c) => ({
+    title: c.project,
+    subtitle: `${c.client} · ${c.sector}`,
+    href: `/work/${c.slug}`,
+    group: "Case Study" as const,
+    keywords: `${c.client} ${c.sector} ${c.industry} ${c.services.join(" ")} ${c.context}`,
+  })),
+  // Services
+  ...services.map((s) => ({
+    title: s.title,
+    subtitle: s.tagline,
+    href: "/services",
+    group: "Service" as const,
+    keywords: `${s.tagline} ${s.copy}`,
+  })),
+  // Main pages
+  {
+    title: "Work",
+    subtitle: "Selected case studies across sectors",
+    href: "/work",
+    group: "Page" as const,
+    keywords: "work portfolio projects case studies",
+  },
+  {
+    title: "Services",
+    subtitle: "Core practice areas",
+    href: "/services",
+    group: "Page" as const,
+    keywords: "services practice areas reports books brand identity editorial",
+  },
+  {
+    title: "About",
+    subtitle: "Who we are and how we work",
+    href: "/about",
+    group: "Page" as const,
+    keywords: "about studio philosophy pillars history",
+  },
+  {
+    title: "Careers",
+    subtitle: "Open roles and how to reach us",
+    href: "/careers",
+    group: "Page" as const,
+    keywords: "careers jobs roles hiring",
+  },
+  {
+    title: "Contact",
+    subtitle: "Start a conversation",
+    href: "/contact",
+    group: "Page" as const,
+    keywords: "contact email phone address get in touch",
+  },
+];
+
+export function searchSite(query: string): SearchItem[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const terms = q.split(/\s+/);
+  return searchIndex
+    .map((item) => {
+      const haystack =
+        `${item.title} ${item.subtitle} ${item.keywords}`.toLowerCase();
+      // Score: title matches rank highest, then any term match
+      let score = 0;
+      if (item.title.toLowerCase().includes(q)) score += 10;
+      for (const t of terms) {
+        if (haystack.includes(t)) score += 1;
+      }
+      return { item, score };
+    })
+    .filter((r) => r.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 8)
+    .map((r) => r.item);
+}
+
+// ─── Partners ─────────────────────────────────────────────────────────────────
 
 export const partners: Partner[] = [
   { name: "BPI", logo: "/logos/Bank_of_the_Philippine_Islands_logo.svg-1.webp" },

@@ -36,9 +36,9 @@ export function Hero() {
 
         <h1 className="mt-8 max-w-5xl font-serif text-display-xl text-canvas">
           {["Designed to last.", "Built to matter."].map((line, i) => (
-            <span key={line} className="block overflow-hidden">
+            <span key={line} className="block overflow-hidden pb-[0.12em]">
               <motion.span
-                className="block"
+                className="block pb-[0.12em]"
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, ease, delay: 0.1 + i * 0.12 }}

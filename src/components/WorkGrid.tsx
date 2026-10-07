@@ -28,12 +28,30 @@ type GridEntry =
   | { kind: "project"; data: Project }
   | { kind: "case-study"; data: (typeof caseStudies)[number] };
 
+// Explicit display order for the Work grid, by slug. Entries not listed here
+// fall to the end, in their original array order.
+const DISPLAY_ORDER = [
+  "inlife-kairos",
+  "jollibee-joy-for-tomorrow",
+  "bsp-yaman-numismatic-heritage",
+  "bcda-one-clark-annual-report",
+  "smgp-brand-identity",
+  "dlsu-centennial",
+  "bpi-building-a-better-philippines",
+  "mgen-energy-in-synergy",
+];
+
+function orderIndex(slug: string): number {
+  const i = DISPLAY_ORDER.indexOf(slug);
+  return i === -1 ? DISPLAY_ORDER.length : i;
+}
+
 const allEntries: GridEntry[] = [
   ...caseStudies.map((cs) => ({ kind: "case-study" as const, data: cs })),
   ...projects
     .filter((p) => !caseStudies.some((cs) => cs.slug === p.slug))
     .map((p) => ({ kind: "project" as const, data: p })),
-];
+].sort((a, b) => orderIndex(a.data.slug) - orderIndex(b.data.slug));
 
 function getSector(entry: GridEntry): Sector {
   return entry.data.sector;

@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 
 // Homepage selection: featured first, then two supporting (by slug).
 const FEATURED_SLUG = "inlife-kairos";
-const SUPPORTING_SLUGS = ["smgp-brand-identity", "jollibee-joy-for-tomorrow"];
+const SUPPORTING_SLUGS = ["jollibee-joy-for-tomorrow", "smgp-brand-identity"];
 
 export function CaseStudyPreviews() {
   const featured = caseStudies.find((c) => c.slug === FEATURED_SLUG);
