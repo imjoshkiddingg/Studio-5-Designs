@@ -45,8 +45,8 @@ export function About() {
                 keeps the work from looking like everything else.{" "}
                 <span className="font-semibold text-ink">Culture</span> keeps
                 us rooted.{" "}
-                <span className="font-semibold text-ink">Trust</span> is what
-                makes clients return.
+                <span className="font-semibold text-ink">Trust</span> builds
+                relationships that last.
               </p>
             </Reveal>
           </div>

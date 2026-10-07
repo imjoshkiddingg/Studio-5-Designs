@@ -2,7 +2,13 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { projects, caseStudies, type Project, type Sector } from "@/lib/site";
+import {
+  projects,
+  caseStudies,
+  sectorNotes,
+  type Project,
+  type Sector,
+} from "@/lib/site";
 import { ProjectCard } from "./ProjectCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,6 +54,10 @@ export function WorkGrid({ showFilters = true }: WorkGridProps) {
     [active]
   );
 
+  // Writeup for the currently selected sector (none when "All")
+  const activeNote =
+    active === "All" ? null : sectorNotes.find((n) => n.sector === active) ?? null;
+
   return (
     <div>
       {showFilters && (
@@ -76,6 +86,24 @@ export function WorkGrid({ showFilters = true }: WorkGridProps) {
           })}
         </div>
       )}
+
+      {/* Selected sector writeup */}
+      <AnimatePresence mode="wait" initial={false}>
+        {activeNote && (
+          <motion.div
+            key={activeNote.sector}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="mt-8 max-w-3xl font-serif text-xl leading-relaxed text-ink md:text-2xl">
+              {activeNote.why}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <motion.div
         layout
@@ -150,7 +178,7 @@ function CaseStudyCard({
         />
       </div>
 
-      <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-muted transition-all duration-500 ease-editorial group-hover:max-h-20">
+      <p className="mt-3 text-sm leading-relaxed text-muted">
         {study.context}
       </p>
     </Link>

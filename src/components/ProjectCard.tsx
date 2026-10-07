@@ -39,8 +39,8 @@ export function ProjectCard({ project }: { project: Project }) {
         />
       </div>
 
-      {/* Summary — visible on hover via opacity transition */}
-      <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-muted transition-all duration-500 ease-editorial group-hover:max-h-20">
+      {/* Summary */}
+      <p className="mt-3 text-sm leading-relaxed text-muted">
         {project.summary}
       </p>
     </Link>

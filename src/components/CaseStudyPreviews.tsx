@@ -1,11 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Quote } from "lucide-react";
+import { ArrowUpRight, Award } from "lucide-react";
 import { caseStudies, type CaseStudy } from "@/lib/site";
 import { Reveal } from "./Reveal";
 
+// Homepage selection: featured first, then two supporting (by slug).
+const FEATURED_SLUG = "inlife-kairos";
+const SUPPORTING_SLUGS = ["smgp-brand-identity", "jollibee-joy-for-tomorrow"];
+
 export function CaseStudyPreviews() {
-  const [featured, ...supporting] = caseStudies;
+  const featured = caseStudies.find((c) => c.slug === FEATURED_SLUG);
+  const supporting = SUPPORTING_SLUGS.map((slug) =>
+    caseStudies.find((c) => c.slug === slug)
+  ).filter((c): c is CaseStudy => Boolean(c));
+
   if (!featured) return null;
 
   return (
@@ -127,6 +135,21 @@ function FeaturedCaseStudyCard({ study }: { study: CaseStudy }) {
                 {study.quote.role}
               </footer>
             </blockquote>
+          )}
+
+          {/* Awards */}
+          {study.awards.length > 0 && (
+            <ul className="mt-8 space-y-2">
+              {study.awards.map((award) => (
+                <li
+                  key={award}
+                  className="flex items-start gap-2 text-xs leading-relaxed text-accent"
+                >
+                  <Award className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.6} />
+                  <span>{award}</span>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
 

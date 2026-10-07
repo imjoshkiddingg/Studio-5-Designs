@@ -13,7 +13,7 @@ export function Partners() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-5 max-w-xl font-serif text-display-md text-ink">
-                Fifty years of clients who keep coming back.
+                Fifty years of clients who continue to trust us.
               </h2>
             </Reveal>
           </div>
@@ -24,7 +24,7 @@ export function Partners() {
             {partners.map((partner) => (
               <li
                 key={partner.name}
-                className="flex aspect-[3/2] items-center justify-center p-6"
+                className="group flex aspect-[3/2] items-center justify-center p-6"
                 title={partner.name}
               >
                 {partner.logo ? (
@@ -33,10 +33,10 @@ export function Partners() {
                     alt={partner.name}
                     width={140}
                     height={72}
-                    className="max-h-12 w-auto max-w-[80%] object-contain"
+                    className="max-h-12 w-auto max-w-[80%] object-contain transition-transform duration-300 ease-editorial group-hover:scale-125"
                   />
                 ) : (
-                  <span className="text-center text-sm font-medium text-ink">
+                  <span className="text-center text-sm font-medium text-ink transition-transform duration-300 ease-editorial group-hover:scale-125">
                     {partner.name}
                   </span>
                 )}

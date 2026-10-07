@@ -51,19 +51,6 @@ export function Services() {
                         >
                           {service.title}
                         </span>
-                        <AnimatePresence initial={false}>
-                          {isActive && (
-                            <motion.span
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                              className="mt-3 block overflow-hidden text-sm italic leading-relaxed text-muted"
-                            >
-                              {service.tagline}
-                            </motion.span>
-                          )}
-                        </AnimatePresence>
                       </span>
                     </div>
                   </button>

@@ -31,6 +31,46 @@ export type Sector =
   | "Power"
   | "Government / Heritage";
 
+// ─── Sector Notes ─────────────────────────────────────────────────────────────
+// Short editorial writeups on why each sector matters to design and storytelling,
+// and how Studio 5 approaches it. Surfaced on the /work page.
+
+export type SectorNote = {
+  sector: Sector;
+  /** Why this sector matters in relation to design and storytelling */
+  why: string;
+  /** How Studio 5 executes for this sector */
+  how: string;
+};
+
+export const sectorNotes: SectorNote[] = [
+  {
+    sector: "Finance",
+    why: "Financial institutions deal in trust, and trust is built on how clearly you can explain yourself. A report is often the one document a stakeholder reads cover to cover — the moment numbers become a narrative about stewardship.",
+    how: "We structure dense financial and ESG data so it reads with confidence, then surround it with photography and writing that remind readers there are people behind the performance.",
+  },
+  {
+    sector: "FMCG",
+    why: "Consumer brands live or die on perception, and the public now expects them to account for their impact. Sustainability and corporate reporting is where a household name proves its promises are more than packaging.",
+    how: "We turn ESG frameworks and operational data into publications with genuine narrative warmth — accountability that reads like a story worth believing, not a compliance exercise.",
+  },
+  {
+    sector: "Education",
+    why: "Universities carry generations of identity. A centennial or landmark volume is not marketing — it is how an institution hands its history to the people who will carry it forward.",
+    how: "We treat these as scholarly keepsakes: deep archival research, intentional typography, and a design restraint that lets a century of memory speak for itself.",
+  },
+  {
+    sector: "Power",
+    why: "Energy and infrastructure companies operate at a scale most people never see. Their challenge is credibility — proving reliability and a real commitment to sustainability to investors, regulators, and the public at once.",
+    how: "We build identities and reports that hold industrial authority and environmental responsibility in the same frame, coherent across a facility sign and an investor deck.",
+  },
+  {
+    sector: "Government / Heritage",
+    why: "National institutions are custodians of shared memory. The work must satisfy scholars and still move a general reader — rigorous enough to be a reference, human enough to be kept.",
+    how: "We draw from museum and exhibition thinking: give each artifact the space and light it deserves, and let the design recede in service of the object and its story.",
+  },
+];
+
 // ─── Project ─────────────────────────────────────────────────────────────────
 
 export type Project = {
@@ -45,63 +85,10 @@ export type Project = {
   homeFeature?: boolean;
 };
 
-export const projects: Project[] = [
-  {
-    slug: "bpi-building-a-better-philippines",
-    client: "BPI",
-    sector: "Finance",
-    title: "Building a Better Philippines",
-    summary:
-      "An annual report reframing financial performance as national progress — clarity, warmth, and stewardship in equal measure.",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    featured: true,
-    homeFeature: true,
-  },
-  {
-    slug: "jollibee-joy-for-tomorrow",
-    client: "Jollibee Group",
-    sector: "FMCG",
-    title: "Joy for Tomorrow — Sustainability Report",
-    summary:
-      "Translating ESG frameworks and operational data into a warm, human narrative of shared responsibility.",
-    image: "/covers/joy-for-tomorrow.jpg",
-    featured: true,
-    homeFeature: true,
-  },
-  {
-    slug: "dlsu-centennial",
-    client: "De La Salle University",
-    sector: "Education",
-    title: "Centennial Commemorative Publication",
-    summary:
-      "A landmark volume marking a century of Lasallian education — designed to be held and kept for generations.",
-    image: "/covers/dlsu-centennial.jpg",
-    featured: true,
-    homeFeature: true,
-  },
-  {
-    slug: "mgen-energy-in-synergy",
-    client: "MGen",
-    sector: "Power",
-    title: "Energy in Synergy",
-    summary:
-      "A visual language for energy leadership grounded in reliability, sustainability, and forward motion.",
-    image:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
-    featured: true,
-  },
-  {
-    slug: "bsp-yaman",
-    client: "Bangko Sentral ng Pilipinas",
-    sector: "Government / Heritage",
-    title: "YAMAN: History and Heritage in Philippine Money",
-    summary:
-      "Archival documentation and photography chronicling centuries of Philippine currency and cultural wealth.",
-    image: "/covers/yaman.jpg",
-    featured: true,
-  },
-];
+// All current work is treated as full case studies (see `caseStudies` below).
+// This array remains for future standalone projects that don't warrant a full
+// case-study treatment.
+export const projects: Project[] = [];
 
 // ─── Case Study ───────────────────────────────────────────────────────────────
 
@@ -146,6 +133,10 @@ export type CaseStudy = {
   hero: string;
   /** Optional image for homepage/listing cards. Falls back to `hero` if unset. */
   cardImage?: string;
+  /** Short summary used on project-style cards (WorkTeaser hero). Falls back to `context`. */
+  summary?: string;
+  /** Mark for homepage WorkTeaser feature slots */
+  homeFeature?: boolean;
   /** Ordered gallery with optional captions and size hints */
   gallery: GalleryImage[];
   /** Slugs of related projects/case studies shown at the bottom */
@@ -320,6 +311,219 @@ export const caseStudies: CaseStudy[] = [
     ],
     relatedProjects: ["inlife-kairos", "dlsu-centennial"],
   },
+
+  {
+    slug: "bpi-building-a-better-philippines",
+    client: "BPI",
+    project: "Building a Better Philippines",
+    sector: "Finance",
+    industry: "Banking & Financial Services",
+    services: [
+      "Annual Report Design",
+      "Editorial Direction",
+      "Data Visualisation",
+      "Photography Art Direction",
+      "Print Production Management",
+    ],
+    homeFeature: true,
+    context:
+      "An annual report reframing financial performance as national progress — clarity, warmth, and stewardship in equal measure.",
+    summary:
+      "An annual report reframing financial performance as national progress — clarity, warmth, and stewardship in equal measure.",
+    challenge:
+      "BPI needed its annual report to do more than satisfy regulators and analysts. As one of the country's oldest banks, it wanted to frame a year of financial results as a chapter in a longer story of national development — without losing the rigour investors expect.",
+    approach:
+      "We built the report around a single idea: that a bank's performance is ultimately measured in the progress of the country it serves. Financial disclosures were structured for clarity, then threaded with human stories of the businesses, families, and communities behind the numbers.",
+    designSolution:
+      "A disciplined editorial grid keeps dense financial tables legible, while commissioned photography grounds the data in real people and places. Warm paper stock and restrained typography signal stewardship rather than spectacle — authority with a human temperature.",
+    outcome:
+      "The report was received as a benchmark among Philippine banking publications, praised by stakeholders for making a complex financial year both credible and genuinely readable.",
+    awards: [],
+    narrative: [
+      "BPI asked us to treat its annual report not as a compliance document but as a statement of purpose — a bank measuring its success by the country's.",
+      "We organised the financials for absolute clarity, then surrounded them with photography and writing that located the numbers in real communities.",
+      "The result reads with the authority investors require and the warmth that reminds every stakeholder what the institution is actually for.",
+    ],
+    hero:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80",
+    gallery: [
+      {
+        src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2000&q=80",
+        caption: "Cover and opening statement — stewardship as a design principle",
+        size: "full",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        caption: "Financial data visualisation — clarity under density",
+        size: "half",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+        caption: "Commissioned photography — the people behind the performance",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["inlife-kairos", "jollibee-joy-for-tomorrow"],
+  },
+
+  {
+    slug: "jollibee-joy-for-tomorrow",
+    client: "Jollibee Group",
+    project: "Joy for Tomorrow — Sustainability Report",
+    sector: "FMCG",
+    industry: "Food & Consumer Goods",
+    services: [
+      "Sustainability Report Design",
+      "ESG Data Visualisation",
+      "Editorial Direction",
+      "Copywriting",
+      "Print Production Management",
+    ],
+    homeFeature: true,
+    context:
+      "Translating ESG frameworks and operational data into a warm, human narrative of shared responsibility.",
+    summary:
+      "Translating ESG frameworks and operational data into a warm, human narrative of shared responsibility.",
+    challenge:
+      "The Jollibee Group is one of the most recognised names in Asian food service, and its sustainability commitments carry real public expectation. The report needed to present rigorous ESG data without reading like a compliance filing — and to feel unmistakably like Jollibee.",
+    approach:
+      "We anchored the report in the brand's own language of joy, framing sustainability not as obligation but as a promise to the next generation. Dense ESG metrics were organised into clear, confident sections, each opening with the human story behind the data.",
+    designSolution:
+      "A bright, optimistic visual system balances charts and frameworks with photography of the people and communities the group serves. Typography and pacing keep the document warm and legible, so a first-time reader and a sustainability analyst both find their footing.",
+    outcome:
+      "Joy for Tomorrow gave the Jollibee Group a sustainability publication its stakeholders actually wanted to read — accountability expressed as a story of shared responsibility rather than a box-ticking exercise.",
+    awards: [],
+    narrative: [
+      "Jollibee's sustainability report had to carry serious ESG disclosure while sounding like the most human brand in the room.",
+      "We balanced the frameworks and the data with warmth — opening each section with the people behind the numbers.",
+      "The finished report reframes accountability as a promise to tomorrow, told with the optimism the brand is known for.",
+    ],
+    hero: "/covers/joy-for-tomorrow.jpg",
+    gallery: [
+      {
+        src: "/covers/joy-for-tomorrow.jpg",
+        caption: "Cover — Joy for Tomorrow sustainability report",
+        size: "full",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+        caption: "ESG frameworks organised for clarity and confidence",
+        size: "half",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
+        caption: "Community photography — the human side of the data",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["bpi-building-a-better-philippines", "inlife-kairos"],
+  },
+
+  {
+    slug: "dlsu-centennial",
+    client: "De La Salle University",
+    project: "Centennial Commemorative Publication",
+    sector: "Education",
+    industry: "Higher Education",
+    services: [
+      "Commemorative Book Design",
+      "Archival Research",
+      "Editorial Direction",
+      "Photography Curation",
+      "Print Production Management",
+    ],
+    homeFeature: true,
+    context:
+      "A landmark volume marking a century of Lasallian education — designed to be held and kept for generations.",
+    summary:
+      "A landmark volume marking a century of Lasallian education — designed to be held and kept for generations.",
+    challenge:
+      "De La Salle University's centennial called for a volume equal to a hundred years of Lasallian education. It had to serve alumni, faculty, and students across generations — authoritative as a historical record, yet personal enough to feel like a shared inheritance.",
+    approach:
+      "We approached the book as a keepsake rather than a chronicle. Working through deep archival material, we built a narrative that moved between institutional milestones and the individual lives shaped by them, letting the university's values carry the structure.",
+    designSolution:
+      "Intentional typography and generous white space give a century of history room to breathe. Archival and contemporary photography sit side by side, and a restrained palette lets the memory speak for itself — a volume made to be held, revisited, and passed on.",
+    outcome:
+      "The centennial publication became an official part of the university's institutional record and a sought-after keepsake among alumni — a hundred years of Lasallian education given permanent, dignified form.",
+    awards: [],
+    narrative: [
+      "A century of Lasallian education needed more than a timeline — it needed a volume alumni and faculty would want to keep.",
+      "We moved through the archives to build a narrative that holds institutional milestones and individual lives in the same frame.",
+      "The finished book is restrained, dignified, and made to be passed on — history as a shared inheritance.",
+    ],
+    hero: "/covers/dlsu-centennial.jpg",
+    gallery: [
+      {
+        src: "/covers/dlsu-centennial.jpg",
+        caption: "Cover — centennial commemorative volume",
+        size: "full",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
+        caption: "Archival spreads — a century of institutional memory",
+        size: "half",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+        caption: "Typography and pacing — room for history to breathe",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["inlife-kairos", "bsp-yaman-numismatic-heritage"],
+  },
+
+  {
+    slug: "mgen-energy-in-synergy",
+    client: "MGen",
+    project: "Energy in Synergy",
+    sector: "Power",
+    industry: "Energy & Infrastructure",
+    services: [
+      "Report Design",
+      "Visual Language Development",
+      "Data Visualisation",
+      "Editorial Direction",
+      "Print Production Management",
+    ],
+    context:
+      "A visual language for energy leadership grounded in reliability, sustainability, and forward motion.",
+    summary:
+      "A visual language for energy leadership grounded in reliability, sustainability, and forward motion.",
+    challenge:
+      "MGen needed to communicate its role in powering the country's growth while signalling a credible path toward sustainable energy. The work had to convey both the scale of its operations and the responsibility behind them, to investors and the public alike.",
+    approach:
+      "We developed a visual language built on the idea of synergy — the convergence of reliability and renewal. The structure moves from operational scale to forward-looking commitment, so the reader understands both what MGen does today and where it is heading.",
+    designSolution:
+      "A confident grid and a palette balancing industrial strength with environmental optimism carry the document. Infographics translate generation capacity and sustainability metrics into clear visual statements, while photography grounds the scale in the real infrastructure behind it.",
+    outcome:
+      "Energy in Synergy gave MGen a cohesive, forward-looking publication that positioned it as a credible leader in the country's energy transition — reliability and renewal held in a single, confident frame.",
+    awards: [],
+    narrative: [
+      "MGen needed to show both the scale of its operations and a credible commitment to sustainable energy.",
+      "We built a visual language around synergy — reliability and renewal converging — and structured the report to move from today's capacity to tomorrow's direction.",
+      "The result reads as the statement of a company confident in its role in the country's energy future.",
+    ],
+    hero:
+      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
+    gallery: [
+      {
+        src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=80",
+        caption: "Cover and visual language — synergy as an organising idea",
+        size: "full",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+        caption: "Infographics — generation capacity and sustainability metrics",
+        size: "half",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80",
+        caption: "Infrastructure photography — scale made tangible",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["smgp-brand-identity", "bpi-building-a-better-philippines"],
+  },
 ];
 
 // ─── Pillars ──────────────────────────────────────────────────────────────────
@@ -353,7 +557,7 @@ export const pillars: Pillar[] = [
   {
     title: "Trust",
     description:
-      "Trust builds lasting relationships with our partners.",
+      "We continue to build relationships with our partners across decades. We treat every project as if our name were on the cover too.",
   },
 ];
 
