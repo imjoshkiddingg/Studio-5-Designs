@@ -68,7 +68,7 @@ function FeaturedCaseStudyCard({ study }: { study: CaseStudy }) {
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-line md:aspect-auto md:min-h-[480px]">
         <Image
-          src={study.hero}
+          src={study.cardImage ?? study.hero}
           alt={`${study.client} — ${study.project}`}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
@@ -156,7 +156,7 @@ function SupportingCaseStudyCard({ study }: { study: CaseStudy }) {
       {/* Image */}
       <div className="relative aspect-[16/9] overflow-hidden bg-line">
         <Image
-          src={study.hero}
+          src={study.cardImage ?? study.hero}
           alt={`${study.client} — ${study.project}`}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"

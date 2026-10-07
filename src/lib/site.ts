@@ -142,8 +142,10 @@ export type CaseStudy = {
     author: string;
     role: string;
   };
-  /** Full-bleed header image */
+  /** Full-bleed header image (used on the detail page banner) */
   hero: string;
+  /** Optional image for homepage/listing cards. Falls back to `hero` if unset. */
+  cardImage?: string;
   /** Ordered gallery with optional captions and size hints */
   gallery: GalleryImage[];
   /** Slugs of related projects/case studies shown at the bottom */
@@ -189,6 +191,7 @@ export const caseStudies: CaseStudy[] = [
       role: "Executive Chairperson, InLife",
     },
     hero: "/covers/kairos.png",
+    cardImage: "/covers/kairos-1.jpg",
     gallery: [
       {
         src: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=2000&q=80",
@@ -416,10 +419,10 @@ export type Partner = {
 export const partners: Partner[] = [
   { name: "BPI", logo: "/logos/Bank_of_the_Philippine_Islands_logo.svg-1.webp" },
   { name: "Ayala", logo: "/logos/AYALA-LOGO_BLUE-AND-ORANGE_RGB.png" },
-  { name: "Jollibee Group" },
+  { name: "Jollibee Group", logo: "/logos/jollibee-logo1.jpg" },
   { name: "Meralco", logo: "/logos/Meralco.svg" },
   { name: "Petron", logo: "/logos/Petron_logo.svg.webp" },
-  { name: "InLife" },
+  { name: "InLife", logo: "/logos/inlife-logo1.png" },
   { name: "San Miguel Global Power", logo: "/logos/power-logo-black-1.png" },
   { name: "Del Monte Quality", logo: "/logos/Logo_Del_Monte.svg.webp" },
   { name: "Manila Golf Club", logo: "/logos/Manila-Golf-Logo-Green-Small-2.webp" },
