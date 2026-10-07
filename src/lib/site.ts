@@ -165,21 +165,20 @@ export const caseStudies: CaseStudy[] = [
       "Print Production Management",
     ],
     context:
-      "A centenary commemorative book capturing individual moments that shaped a century of insurance leadership.",
+      "A commemorative book capturing individual moments that shaped over 115 years of insurance leadership.",
     challenge:
-      "InLife's centennial demanded more than a corporate history. The challenge was to move beyond institutional chronology and tell a deeply human story — one that employees, policyholders, and stakeholders would recognise as their own.",
+      "InLife's 115th anniversary demanded more than a corporate history. The challenge was to move beyond institutional chronology and tell a deeply human story — one that employees, policyholders, and stakeholders would recognise as their own.",
     approach:
-      "We structured the narrative around Kairos — the ancient Greek concept of the opportune, singular moment. Rather than organising the book chronologically, we curated pivotal human stories: moments of protection, transformation, and grace that insurance quietly made possible over one hundred years.",
+      "We structured the narrative around Kairos — the ancient Greek concept of the opportune, singular moment. Rather than organising the book chronologically, we curated pivotal human stories: moments of protection, transformation, and grace that insurance quietly made possible over 115 years.",
     designSolution:
       "The volume pairs archival photography with unhurried typography and generous white space, creating a rhythm that invites the reader to pause and reflect. A muted tonal palette honours the institution's heritage while remaining accessible and contemporary. Every spread is treated as a complete thought.",
     outcome:
-      "Kairos became a centennial touchstone — distributed to every employee, board member, and key stakeholder. It has since been cited internally as the definitive record of InLife's first century, and received recognition as a benchmark in Philippine institutional publishing.",
+      "Kairos became the defining record of InLife's 115-year milestone — distributed to every employee, board member, and key stakeholder. It has since been cited internally as the authoritative account of the institution's history, and received recognition as a benchmark in Philippine institutional publishing.",
     awards: [
-      "Best Commemorative Publication — Philippine Graphic Design Awards",
-      "Print Excellence — Asian Publishing Convention",
+      "Gold Stevie Award, Publication – Public Relations Category — 23rd Annual International Business Awards",
     ],
     narrative: [
-      "InLife approached its centennial not as a corporate anniversary but as a human milestone — one hundred years measured in the moments that moved people.",
+      "InLife approached its 115th anniversary not as a corporate milestone but as a human one — 115 years measured in the moments that moved people.",
       "We structured the book around Kairos, the ancient notion of the opportune moment, weaving personal testimony, archival photography, and quiet typographic pacing into a volume meant to be revisited.",
       "The result is a keepsake that reads less like a corporate history and more like a shared memory — precise in craft, generous in humanity.",
     ],
@@ -197,19 +196,14 @@ export const caseStudies: CaseStudy[] = [
         size: "full",
       },
       {
-        src: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80",
-        caption: "Chapter openers with tonal portrait photography",
+        src: "/covers/kairos-1.jpg",
+        caption: "Chapter spreads — portrait photography and narrative typography",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
-        caption: "Typography system — display serif with intentional leading",
+        src: "/covers/kairos-2.jpg",
+        caption: "Interior pages — editorial layout and visual storytelling",
         size: "half",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2000&q=80",
-        caption: "Binding and materials — linen cover, debossed wordmark",
-        size: "full",
       },
     ],
     relatedProjects: ["bsp-yaman-numismatic-heritage", "dlsu-centennial"],

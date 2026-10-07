@@ -138,40 +138,6 @@ export default function WorkDetailPage({ params }: Params) {
           </div>
         </div>
       </section>
-
-      {/* Bottom CTA */}
-      <section className="border-t border-line bg-ink-deep py-20 text-canvas md:py-24">
-        <div className="container-editorial flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <Reveal>
-              <p className="eyebrow text-white/50">Start a conversation</p>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <h2 className="mt-4 font-serif text-display-md">
-                Your organisation has a story.
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-4 max-w-md text-white/70">
-                Let&apos;s give it form — through a publication, an identity, or
-                a volume built to last.
-              </p>
-            </Reveal>
-          </div>
-          <Reveal delay={0.14}>
-            <Link
-              href="/contact"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-white/20 px-7 py-4 text-sm text-white transition-colors hover:border-white hover:bg-white hover:text-ink"
-            >
-              Get in touch
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                strokeWidth={1.6}
-              />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
     </article>
   );
 }

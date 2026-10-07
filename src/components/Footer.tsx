@@ -10,15 +10,18 @@ export function Footer() {
       <div className="container-editorial py-20 md:py-28">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-6">
-            <p className="eyebrow text-white/50">{siteConfig.tagline}</p>
+            <p className="eyebrow text-white/50">Start a Conversation</p>
             <h2 className="mt-6 max-w-xl font-serif text-4xl leading-tight md:text-5xl">
-              Everyone has a story to tell.
+              Your organisation has a story.
             </h2>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
+              Let&apos;s give it form through a design built to last.
+            </p>
             <Link
               href="/contact"
-              className="group mt-8 inline-flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm text-white transition-colors hover:border-white hover:bg-white hover:text-ink"
             >
-              Share your organization&apos;s story with us
+              Get in touch
               <ArrowUpRight
                 className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 strokeWidth={1.6}

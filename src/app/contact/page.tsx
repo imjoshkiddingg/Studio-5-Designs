@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Share your organization's story with Studio 5 Designs. Start a conversation about your next publication, identity, or heritage volume.",
+    "Start a conversation with Studio 5 Designs about your next publication, identity, or heritage volume.",
 };
 
 export default function ContactPage() {
@@ -16,18 +16,18 @@ export default function ContactPage() {
       <div className="container-editorial grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="eyebrow">Contact</p>
+            <p className="eyebrow">Start a Conversation</p>
           </Reveal>
           <Reveal delay={0.06}>
             <h1 className="mt-6 font-serif text-display-md text-ink">
-              Everyone has a story to tell.
+              Your organisation has a story.
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              Share your organization&apos;s story with us. Whether it&apos;s a
-              milestone, a report, or a legacy in the making — let&apos;s give it
-              form.
+              Let&apos;s give it form through a design built to last. Tell us
+              about your next publication, identity, or milestone — and we
+              will take it from there.
             </p>
           </Reveal>
 
