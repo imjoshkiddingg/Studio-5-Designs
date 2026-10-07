@@ -419,10 +419,10 @@ export type Partner = {
 export const partners: Partner[] = [
   { name: "BPI", logo: "/logos/Bank_of_the_Philippine_Islands_logo.svg-1.webp" },
   { name: "Ayala", logo: "/logos/AYALA-LOGO_BLUE-AND-ORANGE_RGB.png" },
-  { name: "Jollibee Group", logo: "/logos/jollibee-logo1.jpg" },
+  { name: "Jollibee Group", logo: "/logos/jollibee-logo2.png" },
   { name: "Meralco", logo: "/logos/Meralco.svg" },
   { name: "Petron", logo: "/logos/Petron_logo.svg.webp" },
-  { name: "InLife", logo: "/logos/inlife-logo1.png" },
+  { name: "InLife", logo: "/logos/inlife-logo2.png" },
   { name: "San Miguel Global Power", logo: "/logos/power-logo-black-1.png" },
   { name: "Del Monte Quality", logo: "/logos/Logo_Del_Monte.svg.webp" },
   { name: "Manila Golf Club", logo: "/logos/Manila-Golf-Logo-Green-Small-2.webp" },
