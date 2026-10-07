@@ -2,22 +2,28 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/site";
 import { Reveal } from "./Reveal";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard, ProjectCardHero } from "./ProjectCard";
 
 export function WorkTeaser() {
-  const featured = projects.filter((p) => p.featured).slice(0, 3);
+  // Lead hero: first homeFeature item. Support cards: next two homeFeature items.
+  const homeItems = projects.filter((p) => p.homeFeature);
+  const heroProject = homeItems[0];
+  const supportProjects = homeItems.slice(1, 3);
+
+  if (!heroProject) return null;
 
   return (
     <section className="border-t border-line py-24 md:py-32">
       <div className="container-editorial">
+        {/* Section header */}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <Reveal>
-              <p className="eyebrow">Our Work</p>
+              <p className="eyebrow">Selected Work</p>
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-5 max-w-xl font-serif text-display-md text-ink">
-                Selected work across sectors.
+                Work built to endure.
               </h2>
             </Reveal>
           </div>
@@ -35,13 +41,21 @@ export function WorkTeaser() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.06}>
-              <ProjectCard project={project} />
-            </Reveal>
-          ))}
-        </div>
+        {/* Hero card — full width */}
+        <Reveal delay={0.08} className="mt-12">
+          <ProjectCardHero project={heroProject} />
+        </Reveal>
+
+        {/* Support grid — 2-up below hero */}
+        {supportProjects.length > 0 && (
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {supportProjects.map((project, i) => (
+              <Reveal key={project.slug} delay={0.1 + i * 0.06}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

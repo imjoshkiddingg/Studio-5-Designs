@@ -2,8 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { projects, type Project, type Sector } from "@/lib/site";
+import { projects, caseStudies, type Project, type Sector } from "@/lib/site";
 import { ProjectCard } from "./ProjectCard";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const sectors: (Sector | "All")[] = [
   "All",
@@ -14,23 +17,45 @@ const sectors: (Sector | "All")[] = [
   "Government / Heritage",
 ];
 
+// Unified entry for the grid — both projects and case studies
+type GridEntry =
+  | { kind: "project"; data: Project }
+  | { kind: "case-study"; data: (typeof caseStudies)[number] };
+
+const allEntries: GridEntry[] = [
+  ...caseStudies.map((cs) => ({ kind: "case-study" as const, data: cs })),
+  ...projects
+    .filter((p) => !caseStudies.some((cs) => cs.slug === p.slug))
+    .map((p) => ({ kind: "project" as const, data: p })),
+];
+
+function getSector(entry: GridEntry): Sector {
+  return entry.data.sector;
+}
+
 type WorkGridProps = {
-  items?: Project[];
   showFilters?: boolean;
 };
 
-export function WorkGrid({ items = projects, showFilters = true }: WorkGridProps) {
+export function WorkGrid({ showFilters = true }: WorkGridProps) {
   const [active, setActive] = useState<Sector | "All">("All");
 
   const filtered = useMemo(
-    () => (active === "All" ? items : items.filter((p) => p.sector === active)),
-    [active, items]
+    () =>
+      active === "All"
+        ? allEntries
+        : allEntries.filter((e) => getSector(e) === active),
+    [active]
   );
 
   return (
     <div>
       {showFilters && (
-        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter by sector">
+        <div
+          className="flex flex-wrap gap-2"
+          role="tablist"
+          aria-label="Filter by sector"
+        >
           {sectors.map((sector) => {
             const isActive = active === sector;
             return (
@@ -57,16 +82,20 @@ export function WorkGrid({ items = projects, showFilters = true }: WorkGridProps
         className="mt-12 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3"
       >
         <AnimatePresence mode="popLayout">
-          {filtered.map((project) => (
+          {filtered.map((entry) => (
             <motion.div
-              key={project.slug}
+              key={entry.data.slug}
               layout
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              <ProjectCard project={project} />
+              {entry.kind === "case-study" ? (
+                <CaseStudyCard study={entry.data} />
+              ) : (
+                <ProjectCard project={entry.data} />
+              )}
             </motion.div>
           ))}
         </AnimatePresence>
@@ -76,5 +105,54 @@ export function WorkGrid({ items = projects, showFilters = true }: WorkGridProps
         <p className="mt-12 text-muted">No projects in this sector yet.</p>
       )}
     </div>
+  );
+}
+
+/**
+ * Inline case study card — used only in WorkGrid.
+ * Shows the hero image, client, title, and a "Case Study" badge.
+ */
+function CaseStudyCard({
+  study,
+}: {
+  study: (typeof caseStudies)[number];
+}) {
+  return (
+    <Link href={`/work/${study.slug}`} className="group flex flex-col">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-line">
+        <Image
+          src={study.hero}
+          alt={`${study.client} — ${study.project}`}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
+        />
+        {/* Case study marker */}
+        <span className="absolute left-4 top-4 rounded-full bg-ink/85 px-3 py-1 text-xs font-medium text-canvas backdrop-blur-sm">
+          Case Study
+        </span>
+        {/* Sector */}
+        <span className="absolute right-4 top-4 rounded-full bg-canvas/90 px-3 py-1 text-xs font-medium text-ink backdrop-blur-sm">
+          {study.sector}
+        </span>
+      </div>
+
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <p className="text-sm text-muted">{study.client}</p>
+          <h3 className="mt-1 font-serif text-xl leading-snug text-ink">
+            {study.project}
+          </h3>
+        </div>
+        <ArrowUpRight
+          className="mt-1 h-5 w-5 shrink-0 text-line transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+          strokeWidth={1.6}
+        />
+      </div>
+
+      <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-muted transition-all duration-500 ease-editorial group-hover:max-h-20">
+        {study.context}
+      </p>
+    </Link>
   );
 }
