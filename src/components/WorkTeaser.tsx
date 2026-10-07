@@ -23,7 +23,7 @@ export function WorkTeaser() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-5 max-w-xl font-serif text-display-md text-ink">
-                Work built to endure.
+                Publications and identities that outlast the brief.
               </h2>
             </Reveal>
           </div>

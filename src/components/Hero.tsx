@@ -31,11 +31,11 @@ export function Hero() {
           transition={{ duration: 0.7, ease }}
           className="eyebrow text-white/60"
         >
-          Multi-awarded, human-centered design
+          Annual reports · Heritage books · Brand identity
         </motion.p>
 
         <h1 className="mt-8 max-w-5xl font-serif text-display-xl text-canvas">
-          {["Creating Impact", "with Purpose."].map((line, i) => (
+          {["Designed to last.", "Built to matter."].map((line, i) => (
             <span key={line} className="block overflow-hidden">
               <motion.span
                 className="block"
@@ -45,7 +45,7 @@ export function Hero() {
               >
                 {i === 1 ? (
                   <>
-                    with <span className="italic text-accent">Purpose.</span>
+                    Built to <span className="italic text-accent">matter.</span>
                   </>
                 ) : (
                   line
@@ -61,8 +61,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease, delay: 0.5 }}
           className="mt-10 max-w-xl text-lg leading-relaxed text-white/75"
         >
-          As a multi-awarded design agency, Studio 5 helps business leaders turn
-          purpose into permanence.
+          Studio 5 Designs has spent over 50 years helping the Philippines&rsquo; leading institutions make their most important work visible — through publications, identities, and volumes designed to be kept.
         </motion.p>
 
         <motion.div

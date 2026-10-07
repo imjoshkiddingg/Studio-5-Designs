@@ -19,33 +19,34 @@ export function About() {
           <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-ink/80">
             <Reveal>
               <p>
-                Behind every major institution, cultural milestone, and community
-                initiative lies a human story waiting to be told with intention.
-                At Studio 5 Designs, we give those stories a voice.
+                Studio 5 Designs has been making institutional work visible for
+                over 50 years. We design annual reports, sustainability
+                publications, commemorative books, and brand identity systems for
+                the organizations that shape Philippine corporate and cultural life.
               </p>
             </Reveal>
             <Reveal delay={0.05}>
               <p>
-                As a human-centered design agency, we collaborate with leading
-                organizations that shape corporate and cultural landscapes. We
-                bridge the gap between vision and values — crafting publications,
-                brand identities, and visual records that cultivate authenticity
-                and shared responsibility.
+                Our clients come to us when the work matters — a centennial that
+                deserves more than a brochure, a report that needs to earn its
+                readers, an identity that has to hold up across decades. We take
+                the brief seriously, work closely with the people who know the
+                institution best, and deliver something they are proud to put
+                their name on.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <p>
-                Our philosophy is simple: unwavering clarity of{" "}
-                <span className="font-semibold text-ink">Purpose</span>, creating
-                with <span className="font-semibold text-ink">Excellence</span>,
-                designing with{" "}
-                <span className="font-semibold text-ink">Innovation</span>, deep
-                respect for{" "}
-                <span className="font-semibold text-ink">Culture</span>, and a
-                fierce commitment to authentic{" "}
-                <span className="font-semibold text-ink">Trust</span>. We transform
-                milestones into shared human experiences — crafted with care, built
-                with precision, and created to leave a lasting legacy.
+                <span className="font-semibold text-ink">Purpose</span> keeps
+                us honest.{" "}
+                <span className="font-semibold text-ink">Excellence</span>{" "}
+                keeps us rigorous.{" "}
+                <span className="font-semibold text-ink">Innovation</span>{" "}
+                keeps the work from looking like everything else.{" "}
+                <span className="font-semibold text-ink">Culture</span> keeps
+                us rooted.{" "}
+                <span className="font-semibold text-ink">Trust</span> is what
+                makes clients return.
               </p>
             </Reveal>
           </div>

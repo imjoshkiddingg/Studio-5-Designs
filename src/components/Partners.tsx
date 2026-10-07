@@ -13,8 +13,7 @@ export function Partners() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-5 max-w-xl font-serif text-display-md text-ink">
-                Trusted by the custodians of national progress and industry
-                leaders.
+                Fifty years of clients who keep coming back.
               </h2>
             </Reveal>
           </div>

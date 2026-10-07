@@ -335,23 +335,28 @@ export type Pillar = {
 export const pillars: Pillar[] = [
   {
     title: "Purpose",
-    description: "Articulating our clients' deepest values and impact.",
+    description:
+      "Every project starts with a clear reason to exist. We ask the hard questions before we open a design file.",
   },
   {
     title: "Excellence",
-    description: "Over 50 years of designing from output to permanence.",
+    description:
+      "Over 50 years of publications, identities, and books that hold up — in print, in hand, and over time.",
   },
   {
     title: "Innovation",
-    description: "Designing forward — reimagining how stories take form.",
+    description:
+      "We find new ways to tell familiar stories. The format should serve the content, not the other way around.",
   },
   {
     title: "Culture",
-    description: "Preserving generational craftsmanship, identity, and legacy.",
+    description:
+      "We design for institutions with deep roots. Understanding that history is not background — it is the brief.",
   },
   {
     title: "Trust",
-    description: "Stewarding human connections with key partners.",
+    description:
+      "Trust builds lasting relationships with our partners.",
   },
 ];
 
@@ -370,37 +375,37 @@ export const services: Service[] = [
   {
     id: "reports",
     title: "Annual & Sustainability Reports",
-    tagline: "Turning corporate accountability into a shared human story.",
+    tagline: "The numbers matter. So does how you tell them.",
     copy:
-      "We transform complex operational data, ESG frameworks, and strategic milestones into clear, compelling publications. By balancing information with narrative warmth, we help institutions articulate progress, build stakeholder trust, and communicate their true impact beyond the balance sheet.",
+      "We design annual reports and sustainability publications for organisations that take their disclosures seriously. That means structuring complex financial and ESG data so it reads clearly, commissioning photography that reflects the real work being done, and writing copy that holds a board member and a first-time reader with equal confidence.",
     visual: "/covers/joy-for-tomorrow.jpg",
     visualCaption: "Jollibee Group — Joy For Tomorrow Report",
   },
   {
     id: "heritage-books",
-    title: "Commemorative & Heritage Coffee Table Books",
-    tagline: "Giving history, art, and milestone moments permanent form.",
+    title: "Commemorative & Heritage Publications",
+    tagline: "A centennial deserves more than a brochure.",
     copy:
-      "From anniversaries to national culture, we design landmark volumes meant to be held and kept for generations. Every page is treated with care — pairing touchpoints, intentional typography, and rich visual storytelling to celebrate identity, memory, and living heritage.",
+      "When an institution marks a milestone worth remembering, we design the book that carries it forward. We handle the editorial direction, the archival research, the photography art direction, and the print production — producing volumes that are held and revisited, not shelved and forgotten.",
     visual: "/covers/yaman.jpg",
     visualCaption: "BSP — YAMAN: History and Heritage in Philippine Money",
   },
   {
     id: "brand-identity",
-    title: "Brand Identity & Strategic Design",
-    tagline: "Crafting unique visual signatures rooted in authentic purpose.",
+    title: "Brand Identity & Visual Systems",
+    tagline: "An identity that holds up under pressure.",
     copy:
-      "A brand is more than a logo; it is an expression of values and vision. We build cohesive designs that resonate across print and digital touchpoints, giving organizations an identity that stands out with confidence and relevance.",
+      "We build visual identities for organisations that need theirs to work hard — across a board presentation, a facility sign, a digital report, and a press release on the same day. We develop the mark, the system, and the standards that keep everything coherent as an organisation grows.",
     visual:
       "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80",
     visualCaption: "San Miguel Global Power — Brand System",
   },
   {
     id: "editorial",
-    title: "Editorial, Copywriting, & Production Management",
-    tagline: "Mastering every expression from the first draft to the finished print run.",
+    title: "Editorial, Copywriting & Production",
+    tagline: "From the first draft to the finished copy on press.",
     copy:
-      "Excellence requires harmony between word and craft. Our end-to-end management covers strategic copywriting, manuscript development, meticulous proofreading, and precise print supervision — ensuring every binding, paper stock, and finish meets an uncompromising standard.",
+      "Good design without good writing is a publication that looks right but reads wrong. We write and edit the manuscripts, manage the print production, specify the paper stocks and finishes, and supervise every proof — so the physical object that arrives matches the intention behind it.",
     visual:
       "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
     visualCaption: "Tactile editorial workbench & manuscript curation",

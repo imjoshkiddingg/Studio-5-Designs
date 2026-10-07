@@ -14,7 +14,7 @@ export function Services() {
       <div className="container-editorial">
         <p className="eyebrow">Core Practice Areas</p>
         <h2 className="mt-5 max-w-2xl font-serif text-display-md text-ink">
-          Four disciplines, one uncompromising standard.
+          What we do.
         </h2>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">

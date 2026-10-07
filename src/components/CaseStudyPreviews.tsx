@@ -19,7 +19,7 @@ export function CaseStudyPreviews() {
             </Reveal>
             <Reveal delay={0.06}>
               <h2 className="mt-5 max-w-xl font-serif text-display-md text-ink">
-                The work in depth.
+                Three projects, examined closely.
               </h2>
             </Reveal>
           </div>

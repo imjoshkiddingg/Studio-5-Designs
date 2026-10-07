@@ -19,7 +19,7 @@ export function Pillars() {
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="mt-5 max-w-2xl font-serif text-display-md">
-            Five convictions that shape every project.
+            Five things we refuse to compromise on.
           </h2>
         </Reveal>
 
