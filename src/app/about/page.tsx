@@ -3,6 +3,14 @@ import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { pillars } from "@/lib/site";
 
+const hoverColors: Record<string, string> = {
+  Purpose: "#EFE8DE",
+  Excellence: "#E8EBEB",
+  Innovation: "#EAE8F2",
+  Culture: "#E6EBE4",
+  Trust: "#E5EBF0",
+};
+
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -68,17 +76,26 @@ export default function AboutPage() {
               <Reveal
                 key={pillar.title}
                 delay={i * 0.08}
-                className="flex flex-col bg-canvas p-8 lg:p-10"
+                className="h-full"
               >
-                <span className="font-serif text-5xl text-line">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-8 font-serif text-2xl text-ink">
-                  {pillar.title}
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  {pillar.description}
-                </p>
+                <div
+                  className="group flex h-full flex-col bg-canvas p-8 transition-colors duration-500 ease-editorial hover:bg-[var(--pillar-hover)] lg:p-10"
+                  style={
+                    {
+                      "--pillar-hover": hoverColors[pillar.title] ?? "#FBFBFA",
+                    } as React.CSSProperties
+                  }
+                >
+                  <span className="font-serif text-5xl text-line transition-colors duration-500 ease-editorial group-hover:text-ink/20">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-8 font-serif text-2xl text-ink transition-colors duration-500 ease-editorial group-hover:text-ink">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted transition-colors duration-500 ease-editorial group-hover:text-ink/70">
+                    {pillar.description}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>
