@@ -12,7 +12,7 @@ export function Footer() {
           <div className="md:col-span-6">
             <p className="eyebrow text-white/50">Start a Conversation</p>
             <h2 className="mt-6 max-w-xl font-serif text-4xl leading-tight md:text-5xl">
-              Your organisation has a story.
+              Your organization has a story.
             </h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               Let&apos;s give it form through a design built to last.
@@ -60,6 +60,12 @@ export function Footer() {
                 className="text-white/70 transition-colors hover:text-white"
               >
                 {siteConfig.email}
+              </a>
+              <a
+                href={`mailto:${siteConfig.emailSecondary}`}
+                className="text-white/70 transition-colors hover:text-white"
+              >
+                {siteConfig.emailSecondary}
               </a>
               <a
                 href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}

@@ -7,7 +7,6 @@ export const navLinks: NavLink[] = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -16,7 +15,8 @@ export const siteConfig = {
   shortName: "Studio 5",
   tagline: "Where Purpose Finds Form",
   email: "hello@studio5designs.com",
-  phone: "+63 (2) 8000 5555",
+  emailSecondary: "rortega.studio5@gmail.com",
+  phone: "+63 8895 4040",
   address: {
     line1: "Studio 5 Designs, Inc.",
     line2: "Makati City, Metro Manila",
@@ -160,11 +160,11 @@ export const caseStudies: CaseStudy[] = [
     context:
       "A commemorative book capturing individual moments that shaped over 115 years of insurance leadership.",
     challenge:
-      "InLife's 115th anniversary demanded more than a corporate history. The challenge was to move beyond institutional chronology and tell a deeply human story — one that employees, policyholders, and stakeholders would recognise as their own.",
+      "InLife's 115th anniversary demanded more than a corporate history. The challenge was to move beyond institutional chronology and tell a deeply human story — one that employees, policyholders, and stakeholders would recognize as their own.",
     approach:
-      "We structured the narrative around Kairos — the ancient Greek concept of the opportune, singular moment. Rather than organising the book chronologically, we curated pivotal human stories: moments of protection, transformation, and grace that insurance quietly made possible over 115 years.",
+      "We structured the narrative around Kairos — the ancient Greek concept of the opportune, singular moment. Rather than organizing the book chronologically, we curated pivotal human stories: moments of protection, transformation, and grace that insurance quietly made possible over 115 years.",
     designSolution:
-      "The volume pairs archival photography with unhurried typography and generous white space, creating a rhythm that invites the reader to pause and reflect. A muted tonal palette honours the institution's heritage while remaining accessible and contemporary. Every spread is treated as a complete thought.",
+      "The volume pairs archival photography with unhurried typography and generous white space, creating a rhythm that invites the reader to pause and reflect. A muted tonal palette honors the institution's heritage while remaining accessible and contemporary. Every spread is treated as a complete thought.",
     outcome:
       "Kairos became the defining record of InLife's 115-year milestone — distributed to every employee, board member, and key stakeholder. It has since been cited internally as the authoritative account of the institution's history, and received recognition as a benchmark in Philippine institutional publishing.",
     awards: [
@@ -190,7 +190,7 @@ export const caseStudies: CaseStudy[] = [
         size: "full",
       },
       {
-        src: "/covers/kairos-2.jpg",
+        src: "/covers/kairos-3.jpg",
         caption: "Interior pages — editorial layout and visual storytelling",
         size: "half",
       },
@@ -223,7 +223,7 @@ export const caseStudies: CaseStudy[] = [
     approach:
       "We led a brand strategy engagement to articulate SMGP's positioning: reliable at scale, progressive in intent. The identity system had to work equally across infrastructure signage, investor reports, digital platforms, and corporate stationery — without losing coherence.",
     designSolution:
-      "The resulting system centres on a confident wordmark paired with a disciplined grid and a palette that balances industrial authority with environmental credibility. Motion principles and typographic hierarchy were defined to govern both print and digital expressions, giving every touchpoint a coherent voice.",
+      "The resulting system centers on a confident wordmark paired with a disciplined grid and a palette that balances industrial authority with environmental credibility. Motion principles and typographic hierarchy were defined to govern both print and digital expressions, giving every touchpoint a coherent voice.",
     outcome:
       "SMGP's new identity was rolled out across all corporate communications, facility branding, and investor materials within one fiscal year. Internal adoption was high, and external stakeholder feedback cited the rebrand as a clear signal of the company's strategic direction.",
     awards: [],
@@ -237,7 +237,7 @@ export const caseStudies: CaseStudy[] = [
     gallery: [
       {
         src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=2000&q=80",
-        caption: "Primary identity system — wordmark and colour palette",
+        caption: "Primary identity system — wordmark and color palette",
         size: "full",
       },
       {
@@ -321,7 +321,7 @@ export const caseStudies: CaseStudy[] = [
     services: [
       "Annual Report Design",
       "Editorial Direction",
-      "Data Visualisation",
+      "Data Visualization",
       "Photography Art Direction",
       "Print Production Management",
     ],
@@ -341,7 +341,7 @@ export const caseStudies: CaseStudy[] = [
     awards: [],
     narrative: [
       "BPI asked us to treat its annual report not as a compliance document but as a statement of purpose — a bank measuring its success by the country's.",
-      "We organised the financials for absolute clarity, then surrounded them with photography and writing that located the numbers in real communities.",
+      "We organized the financials for absolute clarity, then surrounded them with photography and writing that located the numbers in real communities.",
       "The result reads with the authority investors require and the warmth that reminds every stakeholder what the institution is actually for.",
     ],
     hero:
@@ -354,7 +354,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-        caption: "Financial data visualisation — clarity under density",
+        caption: "Financial data visualization — clarity under density",
         size: "half",
       },
       {
@@ -369,12 +369,12 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "jollibee-joy-for-tomorrow",
     client: "Jollibee Group",
-    project: "Joy for Tomorrow — Sustainability Report",
+    project: "Joy For Tomorrow 2024 Sustainability Report",
     sector: "FMCG",
     industry: "Food & Consumer Goods",
     services: [
       "Sustainability Report Design",
-      "ESG Data Visualisation",
+      "ESG Data Visualization",
       "Editorial Direction",
       "Copywriting",
       "Print Production Management",
@@ -385,9 +385,9 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "Translating ESG frameworks and operational data into a warm, human narrative of shared responsibility.",
     challenge:
-      "The Jollibee Group is one of the most recognised names in Asian food service, and its sustainability commitments carry real public expectation. The report needed to present rigorous ESG data without reading like a compliance filing — and to feel unmistakably like Jollibee.",
+      "The Jollibee Group is one of the most recognized names in global food service, and its sustainability commitments carry real public expectation. The report needed to present rigorous ESG data without reading like a compliance filing — and to feel unmistakably like Jollibee.",
     approach:
-      "We anchored the report in the brand's own language of joy, framing sustainability not as obligation but as a promise to the next generation. Dense ESG metrics were organised into clear, confident sections, each opening with the human story behind the data.",
+      "We anchored the report in the brand's own language of joy, framing sustainability not as obligation but as a promise to the next generation. Dense ESG metrics were organized into clear, confident sections, each opening with the human story behind the data.",
     designSolution:
       "A bright, optimistic visual system balances charts and frameworks with photography of the people and communities the group serves. Typography and pacing keep the document warm and legible, so a first-time reader and a sustainability analyst both find their footing.",
     outcome:
@@ -409,7 +409,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         src: "/covers/joy-for-tomorrow-1.jpg",
-        caption: "ESG frameworks organised for clarity and confidence",
+        caption: "ESG frameworks organized for clarity and confidence",
         size: "half",
       },
       {
@@ -477,50 +477,49 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "mgen-energy-in-synergy",
     client: "MGen",
-    project: "Energy in Synergy",
+    project: "Shaping the Country's Energy Future 2023 Annual Report",
     sector: "Power",
     industry: "Energy & Infrastructure",
     services: [
-      "Report Design",
-      "Visual Language Development",
-      "Data Visualisation",
+      "Annual Report Design",
       "Editorial Direction",
+      "Data Visualization",
+      "Photography Art Direction",
       "Print Production Management",
     ],
     context:
-      "A visual language for energy leadership grounded in reliability, sustainability, and forward motion.",
+      "An annual report charting MGen's balanced energy mix and its path toward a sustainable future for the country.",
     summary:
-      "A visual language for energy leadership grounded in reliability, sustainability, and forward motion.",
+      "An annual report charting MGen's balanced energy mix and its path toward a sustainable future for the country.",
     challenge:
-      "MGen needed to communicate its role in powering the country's growth while signalling a credible path toward sustainable energy. The work had to convey both the scale of its operations and the responsibility behind them, to investors and the public alike.",
+      "Meralco PowerGen Corporation (MGen) is the power generation arm of the country's largest private distribution utility, with a 2,422 MW portfolio spanning coal, natural gas, diesel, and solar. Its 2023 annual report had to hold two truths at once — the scale and reliability of a major baseload provider, and a credible commitment to a 1,500 MW renewable energy goal — for investors, regulators, and the public alike.",
     approach:
-      "We developed a visual language built on the idea of synergy — the convergence of reliability and renewal. The structure moves from operational scale to forward-looking commitment, so the reader understands both what MGen does today and where it is heading.",
+      "We built the report around its theme, Shaping the Country's Energy Future, structuring the narrative so that today's operational strength leads naturally into tomorrow's energy transition. The reader moves from company profile and financial highlights, through the Chairman's and President's messages, to operations and sustainability — each section reinforcing MGen's balance of reliability, affordability, and sustainability.",
     designSolution:
-      "A confident grid and a palette balancing industrial strength with environmental optimism carry the document. Infographics translate generation capacity and sustainability metrics into clear visual statements, while photography grounds the scale in the real infrastructure behind it.",
+      "A confident editorial grid organizes dense operational and financial data — gross capacity by plant, energy sales, consolidated core net income — into clear, legible statements. Infographics translate the portfolio and renewable pipeline into visual terms, while photography of generation facilities grounds the figures in real infrastructure. The palette pairs industrial authority with the optimism of a greener trajectory.",
     outcome:
-      "Energy in Synergy gave MGen a cohesive, forward-looking publication that positioned it as a credible leader in the country's energy transition — reliability and renewal held in a single, confident frame.",
+      "The report gave MGen a cohesive annual publication that positions it as a leader in the Philippines' energy transition — communicating a banner year of recovery and renewable investment, and a clear ambition to reach 10,400 MW of gross capacity by 2028, with the clarity its stakeholders expect.",
     awards: [],
     narrative: [
-      "MGen needed to show both the scale of its operations and a credible commitment to sustainable energy.",
-      "We built a visual language around synergy — reliability and renewal converging — and structured the report to move from today's capacity to tomorrow's direction.",
-      "The result reads as the statement of a company confident in its role in the country's energy future.",
+      "MGen's 2023 annual report had to carry both the scale of a 2,422 MW generation portfolio and a credible path toward 1,500 MW of renewable energy — reliability and renewal in a single document.",
+      "We structured the report around its theme, Shaping the Country's Energy Future, moving from today's operational strength into tomorrow's energy transition, with data organized for absolute clarity.",
+      "The result reads as the statement of a company confident in its role in powering the nation's progress — and in leading its shift to cleaner, greener energy.",
     ],
-    hero:
-      "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=80",
+    hero: "/covers/mgen-1.png",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=80",
-        caption: "Cover and visual language — synergy as an organising idea",
+        src: "/covers/mgen-1.png",
+        caption: "Cover — Shaping the Country's Energy Future, 2023 Annual Report",
         size: "full",
       },
       {
-        src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-        caption: "Infographics — generation capacity and sustainability metrics",
+        src: "/covers/mgen-2.png",
+        caption: "Interior spreads — operational highlights and financial data",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80",
-        caption: "Infrastructure photography — scale made tangible",
+        src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+        caption: "Infographics — generation capacity and renewable pipeline",
         size: "half",
       },
     ],
@@ -536,7 +535,7 @@ export const caseStudies: CaseStudy[] = [
     services: [
       "Annual Report Design",
       "Editorial Direction",
-      "Data Visualisation",
+      "Data Visualization",
       "Photography Art Direction",
       "Print Production Management",
     ],
@@ -545,7 +544,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "The Bases Conversion and Development Authority manages some of the country's most ambitious development projects. Its annual report had to account for a complex year of infrastructure, investment, and public mandate — to government stakeholders and the public alike — without reducing it to a ledger of figures.",
     approach:
-      "We organised the report around the idea of One Clark: many projects, agencies, and communities moving as a single effort. The structure moves from mandate to measurable progress, letting each initiative connect back to the authority's broader role in national development.",
+      "We organized the report around the idea of One Clark: many projects, agencies, and communities moving as a single effort. The structure moves from mandate to measurable progress, letting each initiative connect back to the authority's broader role in national development.",
     designSolution:
       "A clear editorial grid holds dense development and financial data in order, while commissioned photography of sites and communities grounds the mandate in tangible progress. A confident, institutional palette signals public accountability, and infographics translate large-scale metrics into statements a general reader can follow.",
     outcome:
@@ -570,7 +569,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         src: "/covers/bcda-2.jpg",
-        caption: "Development and financial data organised for clarity",
+        caption: "Development and financial data organized for clarity",
         size: "half",
       },
       {
@@ -635,9 +634,9 @@ export const services: Service[] = [
     title: "Annual & Sustainability Reports",
     tagline: "The numbers matter. So does how you tell them.",
     copy:
-      "We design annual reports and sustainability publications for organisations that take their disclosures seriously. That means structuring complex financial and ESG data so it reads clearly, commissioning photography that reflects the real work being done, and writing copy that holds a board member and a first-time reader with equal confidence.",
-    visual: "/covers/joy-for-tomorrow.jpg",
-    visualCaption: "Jollibee Group — Joy For Tomorrow Report",
+      "We design annual reports and sustainability publications for organizations that take their disclosures seriously. That means structuring complex financial and ESG data so it reads clearly, commissioning photography that reflects the real work being done, and writing copy that holds a board member and a first-time reader with equal confidence.",
+    visual: "/covers/mgen-1.png",
+    visualCaption: "MGen — Shaping the Country's Energy Future, 2023 Annual Report",
   },
   {
     id: "heritage-books",
@@ -653,7 +652,7 @@ export const services: Service[] = [
     title: "Brand Identity & Visual Systems",
     tagline: "An identity that holds up under pressure.",
     copy:
-      "We build visual identities for organisations that need theirs to work hard — across a board presentation, a facility sign, a digital report, and a press release on the same day. We develop the mark, the system, and the standards that keep everything coherent as an organisation grows.",
+      "We build visual identities for organizations that need theirs to work hard — across a board presentation, a facility sign, a digital report, and a press release on the same day. We develop the mark, the system, and the standards that keep everything coherent as an organization grows.",
     visual:
       "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80",
     visualCaption: "San Miguel Global Power — Brand System",
@@ -728,13 +727,6 @@ export const searchIndex: SearchItem[] = [
     keywords: "about studio philosophy pillars history",
   },
   {
-    title: "Careers",
-    subtitle: "Open roles and how to reach us",
-    href: "/careers",
-    group: "Page" as const,
-    keywords: "careers jobs roles hiring",
-  },
-  {
     title: "Contact",
     subtitle: "Start a conversation",
     href: "/contact",
@@ -769,7 +761,7 @@ export function searchSite(query: string): SearchItem[] {
 
 export const partners: Partner[] = [
   { name: "BPI", logo: "/logos/Bank_of_the_Philippine_Islands_logo.svg-1.webp" },
-  { name: "Ayala", logo: "/logos/AYALA-LOGO_BLUE-AND-ORANGE_RGB.png" },
+  { name: "Mynt", logo: "/logos/mynt-logo.svg" },
   { name: "Jollibee Group", logo: "/logos/jollibee-logo2.png" },
   { name: "Meralco", logo: "/logos/Meralco.svg" },
   { name: "Petron", logo: "/logos/Petron_logo.svg.webp" },

@@ -20,9 +20,9 @@ export function About() {
             <Reveal>
               <p>
                 Studio 5 Designs has been making institutional work visible for
-                over 50 years. We design annual reports, sustainability
-                publications, commemorative books, and brand identity systems for
-                the organizations that shape Philippine corporate and cultural life.
+                over 50 years. We design projects and systems for organizations
+                across different industries that shape Philippine corporate and
+                cultural life.
               </p>
             </Reveal>
             <Reveal delay={0.05}>

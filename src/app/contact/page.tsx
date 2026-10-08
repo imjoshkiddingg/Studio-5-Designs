@@ -20,7 +20,7 @@ export default function ContactPage() {
           </Reveal>
           <Reveal delay={0.06}>
             <h1 className="mt-6 font-serif text-display-md text-ink">
-              Your organisation has a story.
+              Your organization has a story.
             </h1>
           </Reveal>
           <Reveal delay={0.12}>

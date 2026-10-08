@@ -67,7 +67,7 @@ export function Navbar() {
           />
         </Link>
 
-        <ul className="hidden items-center gap-9 md:flex">
+        <ul className="hidden items-center gap-10 md:flex lg:gap-14">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
