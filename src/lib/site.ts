@@ -195,8 +195,8 @@ export const caseStudies: CaseStudy[] = [
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
-        caption: "Typography system — display serif with intentional leading",
+        src: "/covers/kairos-4.jpg",
+        caption: "Interior pages — editorial layout and visual storytelling",
         size: "half",
       },
     ],
