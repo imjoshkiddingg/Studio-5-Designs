@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
+import { PillarCard } from "@/components/PillarCard";
+import { ImageDivider } from "@/components/ImageDivider";
 import { pillars } from "@/lib/site";
-
-const hoverColors: Record<string, string> = {
-  Purpose: "#EFE8DE",
-  Excellence: "#E8EBEB",
-  Innovation: "#EAE8F2",
-  Culture: "#E6EBE4",
-  Trust: "#E5EBF0",
-};
 
 export const metadata: Metadata = {
   title: "About",
@@ -25,6 +19,8 @@ export default function AboutPage() {
         title="Behind every institution lies a human story."
         intro="We give those stories a voice — bridging the gap between vision and values through publications, brand identities, and visual records."
       />
+
+      <ImageDivider src="/people.jpg" alt="The people behind Studio 5 Designs" />
 
       <section className="py-20 md:py-28">
         <div className="container-editorial grid gap-12 md:grid-cols-12">
@@ -71,32 +67,14 @@ export default function AboutPage() {
           <Reveal>
             <p className="eyebrow">Strategic Pillars</p>
           </Reveal>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line lg:grid-cols-5">
             {pillars.map((pillar, i) => (
-              <Reveal
+              <PillarCard
                 key={pillar.title}
-                delay={i * 0.08}
-                className="h-full"
-              >
-                <div
-                  className="group flex h-full flex-col bg-canvas p-8 transition-colors duration-500 ease-editorial hover:bg-[var(--pillar-hover)] lg:p-10"
-                  style={
-                    {
-                      "--pillar-hover": hoverColors[pillar.title] ?? "#FBFBFA",
-                    } as React.CSSProperties
-                  }
-                >
-                  <span className="font-serif text-5xl text-line transition-colors duration-500 ease-editorial group-hover:text-ink/20">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-8 font-serif text-2xl text-ink transition-colors duration-500 ease-editorial group-hover:text-ink">
-                    {pillar.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted transition-colors duration-500 ease-editorial group-hover:text-ink/70">
-                    {pillar.description}
-                  </p>
-                </div>
-              </Reveal>
+                pillar={pillar}
+                index={i}
+                variant="light"
+              />
             ))}
           </div>
         </div>

@@ -11,7 +11,7 @@ type ImageDividerProps = {
  */
 export function ImageDivider({ src, alt = "" }: ImageDividerProps) {
   return (
-    <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden bg-ink-deep md:h-[60vh]">
+    <div className="relative h-[32vh] min-h-[220px] w-full overflow-hidden bg-ink-deep md:h-[60vh] md:min-h-[320px]">
       <Image
         src={src}
         alt={alt}

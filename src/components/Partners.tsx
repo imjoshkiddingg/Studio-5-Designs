@@ -20,7 +20,7 @@ export function Partners() {
         </div>
 
         <Reveal delay={0.1}>
-          <ul className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
+          <ul className="mt-16 grid grid-cols-3 gap-x-6 gap-y-10 sm:gap-x-8 sm:gap-y-12 lg:grid-cols-5">
             {partners.map((partner) => (
               <li
                 key={partner.name}

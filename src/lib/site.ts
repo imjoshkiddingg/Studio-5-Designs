@@ -175,12 +175,6 @@ export const caseStudies: CaseStudy[] = [
       "We structured the book around Kairos, the ancient notion of the opportune moment, weaving personal testimony, archival photography, and quiet typographic pacing into a volume meant to be revisited.",
       "The result is a keepsake that reads less like a corporate history and more like a shared memory — precise in craft, generous in humanity.",
     ],
-    quote: {
-      text:
-        "Studio 5 Designs was a wonderful partner who captured the essence of InLife's historic milestone with sensitivity and craft.",
-      author: "Nina Aguas",
-      role: "Executive Chairperson, InLife",
-    },
     hero: "/covers/kairos-1.jpg",
     cardImage: "/covers/kairos-1.jpg",
     gallery: [

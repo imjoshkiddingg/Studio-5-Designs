@@ -1,14 +1,6 @@
 import { pillars } from "@/lib/site";
 import { Reveal } from "./Reveal";
-
-// Per-pillar hover background colors, keyed by pillar title.
-const hoverColors: Record<string, string> = {
-  Purpose: "#EFE8DE",
-  Excellence: "#E8EBEB",
-  Innovation: "#EAE8F2",
-  Culture: "#E6EBE4",
-  Trust: "#E5EBF0",
-};
+import { PillarCard } from "./PillarCard";
 
 export function Pillars() {
   return (
@@ -23,28 +15,9 @@ export function Pillars() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-5">
           {pillars.map((pillar, i) => (
-            <Reveal key={pillar.title} delay={i * 0.08} className="h-full">
-              <div
-                className="group flex h-full flex-col bg-ink-deep p-8 transition-colors duration-500 ease-editorial hover:bg-[var(--pillar-hover)] lg:p-10"
-                style={
-                  {
-                    "--pillar-hover": hoverColors[pillar.title] ?? "#FBFBFA",
-                  } as React.CSSProperties
-                }
-              >
-                <span className="font-serif text-5xl text-white/20 transition-colors duration-500 ease-editorial group-hover:text-ink/30">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-8 font-serif text-2xl text-white transition-colors duration-500 ease-editorial group-hover:text-ink">
-                  {pillar.title}
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/60 transition-colors duration-500 ease-editorial group-hover:text-ink/80">
-                  {pillar.description}
-                </p>
-              </div>
-            </Reveal>
+            <PillarCard key={pillar.title} pillar={pillar} index={i} variant="dark" />
           ))}
         </div>
       </div>

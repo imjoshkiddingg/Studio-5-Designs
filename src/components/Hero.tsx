@@ -25,16 +25,7 @@ export function Hero() {
       </div>
 
       <div className="container-editorial relative pb-20 pt-16 md:pb-32 md:pt-24">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
-          className="eyebrow text-white/60"
-        >
-          Annual reports · Heritage books · Brand identity
-        </motion.p>
-
-        <h1 className="mt-8 max-w-5xl font-serif text-display-xl text-canvas">
+        <h1 className="max-w-5xl font-serif text-display-xl text-canvas">
           {["Designed to last.", "Built to matter."].map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.12em]">
               <motion.span

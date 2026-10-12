@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -15,6 +16,9 @@ export function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const results = useMemo(() => searchSite(query), [query]);
 
@@ -212,20 +216,23 @@ export function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {drawerOpen && (
-          <motion.div
-            className="fixed inset-0 z-50 md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div
-              className="absolute inset-0 bg-ink-deep/40 backdrop-blur-sm"
-              onClick={() => setDrawerOpen(false)}
-              aria-hidden="true"
-            />
+      {/* Mobile drawer — portaled to <body> so it escapes the header's
+          backdrop-blur stacking context and can truly cover the viewport. */}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {drawerOpen && (
+              <motion.div
+                className="fixed inset-0 z-[60] md:hidden"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <div
+                  className="absolute inset-0 bg-ink-deep/80"
+                  onClick={() => setDrawerOpen(false)}
+                  aria-hidden="true"
+                />
             <motion.div
               role="dialog"
               aria-modal="true"
@@ -234,16 +241,10 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col bg-canvas p-6"
+              className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col overflow-y-auto p-6"
+              style={{ backgroundColor: "#FFFFFF" }}
             >
-              <div className="flex items-center justify-between">
-                <Image
-                  src="/studio-5-logo2.png"
-                  alt={siteConfig.name}
-                  width={160}
-                  height={40}
-                  className="h-9 w-auto"
-                />
+              <div className="flex items-center justify-end">
                 <button
                   type="button"
                   onClick={() => setDrawerOpen(false)}
@@ -254,34 +255,71 @@ export function Navbar() {
                 </button>
               </div>
 
-              <ul className="mt-12 flex flex-col gap-1">
-                {navLinks.map((link, i) => (
-                  <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 + i * 0.06 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className="block border-b border-line py-4 font-serif text-3xl text-ink"
+              <nav aria-label="Mobile" className="mt-10 flex flex-col">
+                {navLinks.map((link, i) => {
+                  const active =
+                    link.href === "/"
+                      ? pathname === "/"
+                      : pathname.startsWith(link.href);
+                  return (
+                    <motion.div
+                      key={link.href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + i * 0.06 }}
                     >
-                      {link.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
+                      <Link
+                        href={link.href}
+                        className="flex items-center justify-between border-b border-line py-4"
+                      >
+                        <span
+                          className={`font-sans text-2xl font-medium tracking-tight ${
+                            active ? "text-accent" : "text-ink"
+                          }`}
+                        >
+                          {link.label}
+                        </span>
+                        <ArrowUpRight
+                          className={`h-5 w-5 ${
+                            active ? "text-accent" : "text-line"
+                          }`}
+                          strokeWidth={1.6}
+                        />
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </nav>
 
-              <Link
-                href="/contact"
-                className="mt-auto inline-flex items-center justify-center rounded-full bg-ink px-6 py-3.5 text-sm text-canvas"
-              >
-                Start a Conversation
-              </Link>
+              {/* Contact details */}
+              <div className="mt-8 flex flex-col gap-2 text-sm text-muted">
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="transition-colors hover:text-ink"
+                >
+                  {siteConfig.email}
+                </a>
+                <a
+                  href={`tel:${siteConfig.phone.replace(/[^\d+]/g, "")}`}
+                  className="transition-colors hover:text-ink"
+                >
+                  {siteConfig.phone}
+                </a>
+              </div>
+
+                <Link
+                  href="/contact"
+                  className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 text-sm text-canvas"
+                >
+                  Start a Conversation
+                  <ArrowUpRight className="h-4 w-4" strokeWidth={1.6} />
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </header>
   );
 }
