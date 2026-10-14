@@ -35,7 +35,7 @@ export function ContactForm() {
         </div>
         <h3 className="mt-6 font-serif text-2xl text-ink">Thank you.</h3>
         <p className="mt-3 text-muted">
-          Your story is in good hands. We&apos;ll be in touch shortly.
+          Your story is in good hands. We reply within 2 business days.
         </p>
       </motion.div>
     );
@@ -59,7 +59,7 @@ export function ContactForm() {
               type={field.type}
               autoComplete={field.autoComplete}
               required={field.required}
-              className="w-full border-b border-line bg-transparent py-3 text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
+              className="w-full rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
             />
           </div>
         ))}
@@ -76,10 +76,10 @@ export function ContactForm() {
         <textarea
           id="message"
           name="message"
-          rows={5}
+          rows={6}
           required
           placeholder="Tell us about the story you'd like to tell…"
-          className="w-full resize-none border-b border-line bg-transparent py-3 text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
+          className="w-full resize-none rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
         />
       </div>
 
@@ -94,7 +94,7 @@ export function ContactForm() {
             Sending…
           </>
         ) : (
-          "Share your story"
+          "Send us a Message"
         )}
       </button>
     </form>

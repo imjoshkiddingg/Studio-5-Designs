@@ -44,14 +44,25 @@ export default function ContactPage() {
                   </dd>
                 </div>
               </div>
-              <div className="flex items-center gap-4">
-                <Mail className="h-5 w-5 text-accent" strokeWidth={1.6} />
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="link-underline text-sm text-ink"
-                >
-                  {siteConfig.email}
-                </a>
+              <div className="flex items-start gap-4">
+                <Mail
+                  className="mt-0.5 h-5 w-5 text-accent"
+                  strokeWidth={1.6}
+                />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="link-underline text-sm text-ink"
+                  >
+                    {siteConfig.email}
+                  </a>
+                  <a
+                    href={`mailto:${siteConfig.emailSecondary}`}
+                    className="link-underline text-sm text-ink"
+                  >
+                    {siteConfig.emailSecondary}
+                  </a>
+                </div>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="h-5 w-5 text-accent" strokeWidth={1.6} />

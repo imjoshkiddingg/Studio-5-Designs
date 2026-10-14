@@ -131,6 +131,11 @@ export type CaseStudy = {
   };
   /** Full-bleed header image (used on the detail page banner) */
   hero: string;
+  /** When true, the hero is a logo/mark — render contained (centered, padded)
+      on a light ground instead of cover-cropped. */
+  heroContain?: boolean;
+  /** When true, hide from the Work grid and related-project sections. */
+  hidden?: boolean;
   /** Optional image for homepage/listing cards. Falls back to `hero` if unset. */
   cardImage?: string;
   /** Short summary used on project-style cards (WorkTeaser hero). Falls back to `context`. */
@@ -179,12 +184,12 @@ export const caseStudies: CaseStudy[] = [
     cardImage: "/covers/kairos-1.jpg",
     gallery: [
       {
-        src: "/covers/kairos.png",
+        src: "/covers/kairos-5.jpg",
         caption: "Cover — commemorative volume for InLife's 115th anniversary",
         size: "full",
       },
       {
-        src: "/covers/kairos-3.jpg",
+        src: "/covers/kairos-inside.jpg",
         caption: "Interior pages — editorial layout and visual storytelling",
         size: "half",
       },
@@ -211,37 +216,40 @@ export const caseStudies: CaseStudy[] = [
       "Print & Digital Applications",
     ],
     context:
-      "Modernizing energy leadership through a unified visual language of sustainability and reliability.",
+      "A new corporate identity for the energy arm of San Miguel Corporation — built around the promise of giving every Filipino the power to celebrate life.",
+    summary:
+      "A new corporate identity for the energy arm of San Miguel Corporation — built around the promise of giving every Filipino the power to celebrate life.",
     challenge:
-      "San Miguel Global Power was evolving from a legacy energy holding into a forward-looking sustainability leader. Its existing visual identity no longer communicated the scale, confidence, or environmental responsibility the company had earned.",
+      "San Miguel Global Power was transforming from a traditional industrial power generator into a re-energized corporate entity — one investing in cleaner, lower-emission technologies and sustainable solutions. Its visual identity needed to shed the legacy industrial persona and express a vibrant, forward-looking company that puts people and the planet at the center.",
     approach:
-      "We led a brand strategy engagement to articulate SMGP's positioning: reliable at scale, progressive in intent. The identity system had to work equally across infrastructure signage, investor reports, digital platforms, and corporate stationery — without losing coherence.",
+      "We built the identity around a clear brand essence — \"Giving you the power to celebrate life\" — and a synergy between people and the planet. The system had to unify SMGP's diverse businesses under one mission, vision, and values, working across corporate communications, investor materials, facility signage, and digital platforms without losing coherence.",
     designSolution:
-      "The resulting system centers on a confident wordmark paired with a disciplined grid and a palette that balances industrial authority with environmental credibility. Motion principles and typographic hierarchy were defined to govern both print and digital expressions, giving every touchpoint a coherent voice.",
+      "The full logo brings together a symbol built from the \"S-M-G-P\" initials, the \"San Miguel Global Power\" wordmark, and the tagline into one unified composite. Smooth arcs and a vibrant palette express growth, expansion, and a diversifying portfolio — visually mirroring the company's cleaner infrastructure, including its battery energy storage systems. Comprehensive guidelines govern every application, from stationery to large-format standees.",
     outcome:
-      "SMGP's new identity was rolled out across all corporate communications, facility branding, and investor materials within one fiscal year. Internal adoption was high, and external stakeholder feedback cited the rebrand as a clear signal of the company's strategic direction.",
+      "The new identity now unifies all of SMGP's businesses under a single, confident signature — reinforcing its mission to make sustainable energy solutions available for every Filipino, and signaling the company's shift toward diversity, harmony, and green energy investment.",
     awards: [],
     narrative: [
-      "San Miguel Global Power needed an identity equal to its ambition — one that could hold both industrial scale and a credible commitment to sustainability.",
-      "We built a cohesive system spanning print and digital: a confident wordmark, a disciplined grid, and a palette that signals reliability without coldness.",
-      "The identity gives SMGP a signature that stands out with confidence and relevance across every stakeholder touchpoint.",
+      "San Miguel Global Power set out to move beyond the persona of a traditional industrial power generator and present itself as a vibrant, re-energized company centered on people and the planet.",
+      "We built a full composite logo — the S-M-G-P symbol, the corporate wordmark, and the tagline \"Giving you the power to celebrate life\" — into one unified mark, expressed through smooth arcs and a vibrant, high-energy palette.",
+      "The result is a cohesive identity that unifies the company's businesses and makes its commitment to reliable, sustainable energy legible across every stakeholder touchpoint.",
     ],
-    hero:
-      "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1600&q=80",
+    hero: "/logos/power-logo-black-1.png",
+    heroContain: true,
+    cardImage: "/covers/smgp-identity-a.jpg",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=2000&q=80",
-        caption: "Primary identity system — wordmark and color palette",
+        src: "/covers/smgp-identity-a.jpg",
+        caption: "Corporate identity system — full logo, symbol, and wordmark",
         size: "full",
       },
       {
-        src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-        caption: "Corporate stationery suite",
+        src: "/covers/smgp-identity-b.jpg",
+        caption: "Identity applications across corporate touchpoints",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
-        caption: "Digital and environmental applications",
+        src: "/covers/smgp-standee.jpg",
+        caption: "Large-format standee — the identity in environmental use",
         size: "half",
       },
     ],
@@ -251,7 +259,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "bsp-yaman-numismatic-heritage",
     client: "Bangko Sentral ng Pilipinas",
-    project: "YAMAN: Numismatic Heritage",
+    project: "YAMAN: History and Heritage in Philippine Money",
     sector: "Government / Heritage",
     industry: "Central Banking & Cultural Heritage",
     services: [
@@ -310,6 +318,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "bpi-building-a-better-philippines",
     client: "BPI",
     project: "Building a Better Philippines",
+    hidden: true,
     sector: "Finance",
     industry: "Banking & Financial Services",
     services: [
@@ -319,7 +328,6 @@ export const caseStudies: CaseStudy[] = [
       "Photography Art Direction",
       "Print Production Management",
     ],
-    homeFeature: true,
     context:
       "An annual report reframing financial performance as national progress — clarity, warmth, and stewardship in equal measure.",
     summary:
@@ -647,8 +655,7 @@ export const services: Service[] = [
     tagline: "An identity that holds up under pressure.",
     copy:
       "We build visual identities for organizations that need theirs to work hard — across a board presentation, a facility sign, a digital report, and a press release on the same day. We develop the mark, the system, and the standards that keep everything coherent as an organization grows.",
-    visual:
-      "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=1200&q=80",
+    visual: "/covers/smgp-identity-a.jpg",
     visualCaption: "San Miguel Global Power — Brand System",
   },
   {

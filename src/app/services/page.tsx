@@ -15,7 +15,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         label="Core Practice Areas"
-        title="Four disciplines, one uncompromising standard."
+        title="Four disciplines, one standard of craft."
         intro="We work at the intersection of narrative and craft — turning purpose into publications, identities, and volumes built to last."
       />
 

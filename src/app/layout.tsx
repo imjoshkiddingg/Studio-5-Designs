@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import { ConditionalFooter } from "@/components/ConditionalFooter";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +16,17 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+// Base URL for resolving absolute metadata (OG / Twitter image) URLs.
+// Uses the Vercel-provided deployment URL in production; falls back to localhost
+// in dev. Replace with your custom domain once it's live.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Studio 5 Designs, Inc. — Where Purpose Finds Form",
     template: "%s — Studio 5 Designs, Inc.",
@@ -35,6 +45,12 @@ export const metadata: Metadata = {
     title: "Studio 5 Designs, Inc.",
     description: "Where purpose finds form. Creating impact with purpose.",
     type: "website",
+    siteName: "Studio 5 Designs, Inc.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio 5 Designs, Inc.",
+    description: "Where purpose finds form. Creating impact with purpose.",
   },
 };
 
@@ -54,7 +70,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main">{children}</main>
-        <Footer />
+        <ConditionalFooter />
       </body>
     </html>
   );

@@ -37,7 +37,6 @@ const DISPLAY_ORDER = [
   "bcda-one-clark-annual-report",
   "smgp-brand-identity",
   "dlsu-centennial",
-  "bpi-building-a-better-philippines",
   "mgen-energy-in-synergy",
 ];
 
@@ -47,7 +46,9 @@ function orderIndex(slug: string): number {
 }
 
 const allEntries: GridEntry[] = [
-  ...caseStudies.map((cs) => ({ kind: "case-study" as const, data: cs })),
+  ...caseStudies
+    .filter((cs) => !cs.hidden)
+    .map((cs) => ({ kind: "case-study" as const, data: cs })),
   ...projects
     .filter((p) => !caseStudies.some((cs) => cs.slug === p.slug))
     .map((p) => ({ kind: "project" as const, data: p })),
@@ -167,7 +168,7 @@ function CaseStudyCard({
     <Link href={`/work/${study.slug}`} className="group flex flex-col">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-line">
         <Image
-          src={study.hero}
+          src={study.cardImage ?? study.hero}
           alt={`${study.client} — ${study.project}`}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

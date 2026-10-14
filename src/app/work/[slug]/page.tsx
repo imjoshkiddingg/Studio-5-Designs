@@ -47,14 +47,16 @@ export default function WorkDetailPage({ params }: Params) {
     ? relatedSlugs
         .map((s) => {
           const cs = caseStudies.find((c) => c.slug === s);
-          if (cs)
+          if (cs) {
+            if (cs.hidden) return null;
             return {
               slug: cs.slug,
               client: cs.client,
               title: cs.project,
-              image: cs.hero,
+              image: cs.cardImage ?? cs.hero,
               sector: cs.sector,
             };
+          }
           const p = projects.find((pr) => pr.slug === s);
           if (p)
             return {
@@ -178,14 +180,22 @@ function CaseStudyView({ data }: { data: CaseStudy }) {
       </header>
 
       {/* ── Full-bleed hero image ────────────────────────────────── */}
-      <div className="relative aspect-[16/9] w-full overflow-hidden bg-line">
+      <div
+        className={`relative aspect-[16/9] w-full overflow-hidden ${
+          data.heroContain ? "bg-white" : "bg-line"
+        }`}
+      >
         <Image
           src={data.hero}
           alt={`${data.client} — ${data.project}`}
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className={
+            data.heroContain
+              ? "object-contain p-16 md:p-32 lg:p-40"
+              : "object-cover"
+          }
         />
       </div>
 
