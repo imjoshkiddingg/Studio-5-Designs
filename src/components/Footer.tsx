@@ -48,11 +48,12 @@ export function Footer() {
           <div className="md:col-span-3">
             <p className="eyebrow text-white/50">Studio</p>
             <address className="mt-6 not-italic text-sm leading-relaxed text-white/70">
-              {siteConfig.address.line1}
-              <br />
-              {siteConfig.address.line2}
-              <br />
-              {siteConfig.address.country}
+              {siteConfig.address.lines.map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < siteConfig.address.lines.length - 1 && <br />}
+                </span>
+              ))}
             </address>
             <div className="mt-6 flex flex-col gap-2 text-sm">
               <a

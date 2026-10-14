@@ -37,6 +37,7 @@ const DISPLAY_ORDER = [
   "bcda-one-clark-annual-report",
   "smgp-brand-identity",
   "dlsu-centennial",
+  "miriam-legacy-we-carry",
   "mgen-energy-in-synergy",
 ];
 

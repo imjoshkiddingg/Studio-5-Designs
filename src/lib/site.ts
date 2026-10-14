@@ -18,9 +18,12 @@ export const siteConfig = {
   emailSecondary: "rortega.studio5@gmail.com",
   phone: "+63 8895 4040",
   address: {
-    line1: "Studio 5 Designs, Inc.",
-    line2: "Makati City, Metro Manila",
-    country: "Philippines",
+    lines: [
+      "Unit 302, Cityland 3",
+      "V.A. Rufino cor. Esteban",
+      "Legazpi Village, Makati City",
+      "Metro Manila, 1229 Philippines",
+    ],
   },
 };
 
@@ -477,6 +480,59 @@ export const caseStudies: CaseStudy[] = [
   },
 
   {
+    slug: "miriam-legacy-we-carry",
+    client: "Maryknoll/Miriam College Alumni Association",
+    project: "The Legacy We Carry",
+    sector: "Education",
+    industry: "Higher Education",
+    services: [
+      "Commemorative Book Design",
+      "Creative Concept & Layout",
+      "Editorial Direction",
+      "Photography Curation",
+      "Print Production Management",
+    ],
+    context:
+      "A centennial commemorative book tracing one hundred years from Maryknoll to Miriam — and the alumni who carry its legacy forward.",
+    summary:
+      "A centennial commemorative book tracing one hundred years from Maryknoll to Miriam — and the alumni who carry its legacy forward.",
+    challenge:
+      "As Miriam College marked its centennial, its alumni association set out to honor a century of formation — from the pioneering Maryknoll Sisters to generations of graduates. The book had to hold a shared institutional history and hundreds of individual lives at once, speaking to alumni who bear different names on their diplomas but one enduring tradition.",
+    approach:
+      "We framed the volume as a homecoming rather than a chronicle. Working with the association's editors and writers, we structured the narrative around the values at the heart of a Maryknoll/Miriam education — truth, justice, peace, and service — letting beloved teachers, enduring friendships, and defining moments carry the story.",
+    designSolution:
+      "The design pairs archival and contemporary photography with warm, unhurried typography, giving a century of memory room to breathe. Alumni portraits and personal stories sit alongside institutional milestones, and considered materials and binding make the finished volume a keepsake meant to be held and passed on.",
+    outcome:
+      "The Legacy We Carry became the centerpiece of Miriam College's centennial — a living bridge between past and future that alumni across generations and continents could hold as their own. It stands as a portrait of lives shaped by a shared tradition of excellence and service.",
+    awards: [],
+    narrative: [
+      "Miriam College's centennial called for more than a history — it needed a homecoming, a volume alumni across generations would recognize as their own.",
+      "We built the book around the values of a Maryknoll/Miriam formation, weaving archival photography, alumni portraits, and personal stories into a single enduring narrative.",
+      "The result honors the Sisters who began the journey and the generations who carried it forward — the legacy, given permanent form.",
+    ],
+    hero: "/covers/miriam-table.jpg",
+    cardImage: "/covers/miriam-shelf.jpg",
+    gallery: [
+      {
+        src: "/covers/miriam-shelf.jpg",
+        caption: "Cover — The Legacy We Carry: 100 Years from Maryknoll to Miriam",
+        size: "full",
+      },
+      {
+        src: "/covers/miriam-spread.jpg",
+        caption: "Interior spread — archival photography and editorial typography",
+        size: "half",
+      },
+      {
+        src: "/covers/miriam-table.jpg",
+        caption: "Finished volume — a centennial keepsake meant to be kept",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["dlsu-centennial", "inlife-kairos"],
+  },
+
+  {
     slug: "mgen-energy-in-synergy",
     client: "MGen",
     project: "Shaping the Country's Energy Future 2023 Annual Report",
@@ -562,10 +618,11 @@ export const caseStudies: CaseStudy[] = [
       "We built the report around One Clark — many projects moving as a single effort — and structured it to connect every initiative back to the authority's broader mandate.",
       "The result is a public record that holds the scale of the work and the clarity the public deserves in the same frame.",
     ],
-    hero: "/covers/bcda-1.png",
+    hero: "/covers/bcda-hero.jpg",
+    cardImage: "/covers/bcda-hero.jpg",
     gallery: [
       {
-        src: "/covers/bcda-1.png",
+        src: "/covers/bcda-hero.jpg",
         caption: "Cover — One Clark 2023 Annual Report",
         size: "full",
       },
@@ -616,6 +673,59 @@ export const pillars: Pillar[] = [
     title: "Trust",
     description:
       "We continue to build relationships with our partners across decades. We treat every project as if our name were on the cover too.",
+  },
+];
+
+// ─── Team ─────────────────────────────────────────────────────────────────────
+
+export type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  bio: string[];
+};
+
+export const team: TeamMember[] = [
+  {
+    name: "Marily Ysip-Orosa",
+    role: "Founder and President",
+    image: "/team/marily.png",
+    bio: [
+      "Marily is the founder and president of Studio 5 Designs, one of the pioneers and leaders in graphic design in the country. Apart from overseeing the operations of the company, she is involved in the management of major projects. She is an international award-winning publisher of over 45 coffee table books, and a writer of creative non-fiction.",
+      "Among her many recognitions is being named one of the 100 Most Influential Filipina Women by the Filipina Women's Network in the USA, for innovation and thought leadership.",
+    ],
+  },
+  {
+    name: "BG Hernandez",
+    role: "VP Creative and Innovation Director",
+    image: "/team/bg.png",
+    bio: [
+      "BG is the lead visual strategist for Studio 5 Designs. He is a certified Design Thinking practitioner and a multi-disciplined graphic designer with over 30 years of experience.",
+      "A multi-awarded international designer, BG has produced hundreds of annual reports for industry-leading corporations and has visually authored more than forty coffee table books.",
+    ],
+  },
+];
+
+// ─── Testimonials ──────────────────────────────────────────────────────────────
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  image?: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Studio 5 has become one of the most distinguished and important book publishers, spearheading projects of great historical and social significance. They have helped the nation map our present and future.",
+    author: "Butch Dalisay",
+    image: "/team/butch-dalisay.jpg",
+  },
+  {
+    quote:
+      "It was a privilege working with Studio 5 who was with us in the trenches, so to speak. They are true professionals, generous with their ideas, and remarkable partners for their integrity.",
+    author: "Felice Sta. Maria",
+    image: "/team/felice-sta-maria.webp",
   },
 ];
 

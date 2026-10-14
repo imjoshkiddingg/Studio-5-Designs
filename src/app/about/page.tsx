@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { PillarCard } from "@/components/PillarCard";
 import { ImageDivider } from "@/components/ImageDivider";
+import { Team } from "@/components/Team";
 import { pillars } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -79,6 +80,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Team />
     </>
   );
 }

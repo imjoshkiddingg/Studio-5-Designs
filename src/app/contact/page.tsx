@@ -38,9 +38,12 @@ export default function ContactPage() {
                 <div>
                   <dt className="sr-only">Address</dt>
                   <dd className="text-sm not-italic leading-relaxed text-ink/80">
-                    {siteConfig.address.line1}
-                    <br />
-                    {siteConfig.address.line2}, {siteConfig.address.country}
+                    {siteConfig.address.lines.map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        {i < siteConfig.address.lines.length - 1 && <br />}
+                      </span>
+                    ))}
                   </dd>
                 </div>
               </div>
