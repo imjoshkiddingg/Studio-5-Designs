@@ -221,6 +221,27 @@ function CaseStudyView({ data }: { data: CaseStudy }) {
                 ))}
               </dd>
             </div>
+
+            {/* Awards & Recognition — new line, same block, spanning full width */}
+            {data.awards.length > 0 && (
+              <div className="sm:col-span-2 lg:col-span-3">
+                <dt className="eyebrow">Awards &amp; Recognition</dt>
+                <dd className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {data.awards.map((award) => (
+                    <p
+                      key={award}
+                      className="flex items-start gap-2 text-sm text-ink/80"
+                    >
+                      <Award
+                        className="mt-0.5 h-4 w-4 shrink-0 text-accent"
+                        strokeWidth={1.6}
+                      />
+                      <span>{award}</span>
+                    </p>
+                  ))}
+                </dd>
+              </div>
+            )}
           </dl>
         </div>
       </div>

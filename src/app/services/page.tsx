@@ -53,6 +53,22 @@ export default function ServicesPage() {
                   <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                     {service.copy}
                   </p>
+
+                  {service.offerings && service.offerings.length > 0 && (
+                    <div className="mt-8 border-t border-line pt-6">
+                      <p className="eyebrow">What this includes</p>
+                      <ul className="mt-4 flex flex-wrap gap-2">
+                        {service.offerings.map((offering) => (
+                          <li
+                            key={offering}
+                            className="rounded-full border border-line px-3 py-1.5 text-xs text-ink/70"
+                          >
+                            {offering}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </Reveal>
               </div>
             </section>

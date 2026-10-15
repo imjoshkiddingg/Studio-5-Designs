@@ -94,6 +94,18 @@ export function Services() {
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">
                   {current.copy}
                 </p>
+                {current.offerings && current.offerings.length > 0 && (
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {current.offerings.map((offering) => (
+                      <li
+                        key={offering}
+                        className="rounded-full border border-line px-3 py-1.5 text-xs text-ink/70"
+                      >
+                        {offering}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -160,6 +172,18 @@ export function Services() {
                         <p className="mt-4 leading-relaxed text-ink/80">
                           {service.copy}
                         </p>
+                        {service.offerings && service.offerings.length > 0 && (
+                          <ul className="mt-5 flex flex-wrap gap-2">
+                            {service.offerings.map((offering) => (
+                              <li
+                                key={offering}
+                                className="rounded-full border border-line px-3 py-1.5 text-xs text-ink/70"
+                              >
+                                {offering}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </motion.div>
                   )}

@@ -17,8 +17,24 @@ export function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [mounted, setMounted] = useState(false);
+  // Tracks a drawer link awaiting navigation, so its color transition can play
+  // briefly before the route changes.
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
 
   useEffect(() => setMounted(true), []);
+
+  function navigateFromDrawer(href: string) {
+    if (href === pathname) {
+      setDrawerOpen(false);
+      return;
+    }
+    setPendingHref(href);
+    window.setTimeout(() => {
+      router.push(href);
+      setDrawerOpen(false);
+      setPendingHref(null);
+    }, 280);
+  }
 
   const results = useMemo(() => searchSite(query), [query]);
 
@@ -261,6 +277,7 @@ export function Navbar() {
                     link.href === "/"
                       ? pathname === "/"
                       : pathname.startsWith(link.href);
+                  const highlighted = active || pendingHref === link.href;
                   return (
                     <motion.div
                       key={link.href}
@@ -270,18 +287,22 @@ export function Navbar() {
                     >
                       <Link
                         href={link.href}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigateFromDrawer(link.href);
+                        }}
                         className="flex items-center justify-between border-b border-line py-4"
                       >
                         <span
-                          className={`font-sans text-2xl font-medium tracking-tight ${
-                            active ? "text-accent" : "text-ink"
+                          className={`font-sans text-2xl font-medium tracking-tight transition-colors duration-300 ease-editorial ${
+                            highlighted ? "text-accent" : "text-ink"
                           }`}
                         >
                           {link.label}
                         </span>
                         <ArrowUpRight
-                          className={`h-5 w-5 ${
-                            active ? "text-accent" : "text-line"
+                          className={`h-5 w-5 transition-colors duration-300 ease-editorial ${
+                            highlighted ? "text-accent" : "text-line"
                           }`}
                           strokeWidth={1.6}
                         />

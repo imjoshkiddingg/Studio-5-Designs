@@ -226,8 +226,9 @@ function SupportingCaseStudyCard({ study }: { study: CaseStudy }) {
 
         {/* Awards badge */}
         {study.awards.length > 0 && (
-          <p className="mt-4 text-xs text-accent">
-            {study.awards[0]}
+          <p className="mt-4 flex items-start gap-2 text-xs text-accent">
+            <Award className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.6} />
+            <span>{study.awards[0]}</span>
           </p>
         )}
 

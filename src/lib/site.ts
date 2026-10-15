@@ -193,12 +193,12 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         src: "/covers/kairos-inside.jpg",
-        caption: "Interior pages — editorial layout and visual storytelling",
+        caption: "Interior spread — personal testimony and archival photography",
         size: "half",
       },
       {
         src: "/covers/kairos-4.jpg",
-        caption: "Interior pages — editorial layout and visual storytelling",
+        caption: "Chapter pages — unhurried typography and generous white space",
         size: "half",
       },
     ],
@@ -294,23 +294,8 @@ export const caseStudies: CaseStudy[] = [
     hero: "/covers/yaman-book.jpg",
     gallery: [
       {
-        src: "/covers/yaman.jpg",
+        src: "/covers/bsp-yaman-book.jpg",
         caption: "Cover — debossed linen board with gold foil title treatment",
-        size: "full",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=1200&q=80",
-        caption: "Coin portraiture — macro photography on neutral ground",
-        size: "half",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-        caption: "Archival spreads — historical banknotes with scholarly annotation",
-        size: "half",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2000&q=80",
-        caption: "Full-bleed chapter dividers — cultural artefact photography",
         size: "full",
       },
     ],
@@ -405,11 +390,12 @@ export const caseStudies: CaseStudy[] = [
       "We balanced the frameworks and the data with warmth — opening each section with the people behind the numbers.",
       "The finished report reframes accountability as a promise to tomorrow, told with the optimism the brand is known for.",
     ],
-    hero: "/covers/joy-for-tomorrow.jpg",
+    hero: "/covers/jfc-cover.jpg",
+    cardImage: "/covers/jfc-cover.jpg",
     gallery: [
       {
-        src: "/covers/joy-for-tomorrow.jpg",
-        caption: "Cover — Joy for Tomorrow sustainability report",
+        src: "/covers/jfc-ceo.jpg",
+        caption: "CEO's message — opening the sustainability report",
         size: "full",
       },
       {
@@ -429,7 +415,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "dlsu-centennial",
     client: "De La Salle University",
-    project: "Centennial Commemorative Publication",
+    project: "100: The Future Begins Here",
     sector: "Education",
     industry: "Higher Education",
     services: [
@@ -458,20 +444,21 @@ export const caseStudies: CaseStudy[] = [
       "We moved through the archives to build a narrative that holds institutional milestones and individual lives in the same frame.",
       "The finished book is restrained, dignified, and made to be passed on — history as a shared inheritance.",
     ],
-    hero: "/covers/dlsu-centennial.jpg",
+    hero: "/covers/dlsu-book-0.jpg",
+    cardImage: "/covers/dlsu-book-0.jpg",
     gallery: [
       {
-        src: "/covers/dlsu-centennial.jpg",
-        caption: "Cover — centennial commemorative volume",
+        src: "/covers/dlsu-1.jpg",
+        caption: "Cover — 100: The Future Begins Here",
         size: "full",
       },
       {
-        src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
-        caption: "Archival spreads — a century of institutional memory",
+        src: "/covers/dlsu-3.jpg",
+        caption: "Interior spreads — a century of Lasallian history",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1200&q=80",
+        src: "/covers/dlsu-4.jpg",
         caption: "Typography and pacing — room for history to breathe",
         size: "half",
       },
@@ -563,21 +550,22 @@ export const caseStudies: CaseStudy[] = [
       "We structured the report around its theme, Shaping the Country's Energy Future, moving from today's operational strength into tomorrow's energy transition, with data organized for absolute clarity.",
       "The result reads as the statement of a company confident in its role in powering the nation's progress — and in leading its shift to cleaner, greener energy.",
     ],
-    hero: "/covers/mgen-1.png",
+    hero: "/covers/mgen-cover.jpg",
+    cardImage: "/covers/mgen-cover.jpg",
     gallery: [
       {
-        src: "/covers/mgen-1.png",
+        src: "/covers/mgen-cover.jpg",
         caption: "Cover — Shaping the Country's Energy Future, 2023 Annual Report",
         size: "full",
       },
       {
-        src: "/covers/mgen-2.png",
+        src: "/covers/mgen-inside1.jpg",
         caption: "Interior spreads — operational highlights and financial data",
         size: "half",
       },
       {
-        src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
-        caption: "Infographics — generation capacity and renewable pipeline",
+        src: "/covers/mgen-inside2.jpg",
+        caption: "Interior spreads — sustainability and the energy transition",
         size: "half",
       },
     ],
@@ -738,6 +726,8 @@ export type Service = {
   copy: string;
   visual: string;
   visualCaption: string;
+  /** Specific offerings under this practice area (shown on the /services page). */
+  offerings?: string[];
 };
 
 export const services: Service[] = [
@@ -747,7 +737,13 @@ export const services: Service[] = [
     tagline: "The numbers matter. So does how you tell them.",
     copy:
       "We design annual reports and sustainability publications for organizations that take their disclosures seriously. That means structuring complex financial and ESG data so it reads clearly, commissioning photography that reflects the real work being done, and writing copy that holds a board member and a first-time reader with equal confidence.",
-    visual: "/covers/mgen-1.png",
+    offerings: [
+      "Annual Report Design",
+      "Sustainability Report Design",
+      "ESG & Financial Data Visualization",
+      "Photography Art Direction",
+    ],
+    visual: "/covers/mgen-cover.jpg",
     visualCaption: "MGen — Shaping the Country's Energy Future, 2023 Annual Report",
   },
   {
@@ -756,6 +752,12 @@ export const services: Service[] = [
     tagline: "A centennial deserves more than a brochure.",
     copy:
       "When an institution marks a milestone worth remembering, we design the book that carries it forward. We handle the editorial direction, the archival research, the photography art direction, and the print production — producing volumes that are held and revisited, not shelved and forgotten.",
+    offerings: [
+      "Commemorative Book Design",
+      "Heritage Publication Design",
+      "Creative Concept & Layout",
+      "Archival Research & Photography Art Direction",
+    ],
     visual: "/covers/yaman-book.jpg",
     visualCaption: "BSP — YAMAN: History and Heritage in Philippine Money",
   },
@@ -765,6 +767,13 @@ export const services: Service[] = [
     tagline: "An identity that holds up under pressure.",
     copy:
       "We build visual identities for organizations that need theirs to work hard — across a board presentation, a facility sign, a digital report, and a press release on the same day. We develop the mark, the system, and the standards that keep everything coherent as an organization grows.",
+    offerings: [
+      "Brand Strategy",
+      "Visual Identity Design",
+      "Design System Development",
+      "Brand Guidelines",
+      "Print & Digital Applications",
+    ],
     visual: "/covers/smgp-identity-a.jpg",
     visualCaption: "San Miguel Global Power — Brand System",
   },
@@ -774,9 +783,14 @@ export const services: Service[] = [
     tagline: "From the first draft to the finished copy on press.",
     copy:
       "Good design without good writing is a publication that looks right but reads wrong. We write and edit the manuscripts, manage the print production, specify the paper stocks and finishes, and supervise every proof — so the physical object that arrives matches the intention behind it.",
-    visual:
-      "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=80",
-    visualCaption: "Tactile editorial workbench & manuscript curation",
+    offerings: [
+      "Editorial Direction",
+      "Copywriting & Manuscript Development",
+      "Photography Curation",
+      "Print Production Management",
+    ],
+    visual: "/covers/editorial-1.jpg",
+    visualCaption: "The hands and craft behind every finished page",
   },
 ];
 
