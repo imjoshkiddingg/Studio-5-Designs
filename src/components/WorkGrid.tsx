@@ -35,10 +35,11 @@ const DISPLAY_ORDER = [
   "jollibee-joy-for-tomorrow",
   "bsp-yaman-numismatic-heritage",
   "bcda-one-clark-annual-report",
+  "muntinlupa-moving-forward",
   "smgp-brand-identity",
-  "dlsu-centennial",
-  "miriam-legacy-we-carry",
   "mgen-energy-in-synergy",
+  "miriam-legacy-we-carry",
+  "dlsu-centennial",
 ];
 
 function orderIndex(slug: string): number {

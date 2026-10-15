@@ -627,6 +627,54 @@ export const caseStudies: CaseStudy[] = [
     ],
     relatedProjects: ["bpi-building-a-better-philippines", "mgen-energy-in-synergy"],
   },
+
+  {
+    slug: "muntinlupa-moving-forward",
+    client: "City Government of Muntinlupa",
+    project: "Moving Forward: Celebrating Muntinlupa City's 30th Anniversary",
+    sector: "Government / Heritage",
+    industry: "Local Government & Civic Heritage",
+    services: [
+      "Commemorative Book Design",
+      "Editorial Direction",
+      "Research & Manuscript Development",
+      "Photography Art Direction",
+      "Print Production Management",
+    ],
+    context:
+      "A commemorative coffee table book marking thirty years of cityhood — part retrospective, part blueprint for the generations to come.",
+    summary:
+      "A commemorative coffee table book marking thirty years of cityhood — part retrospective, part blueprint for the generations to come.",
+    challenge:
+      "To mark its 30th cityhood anniversary, Muntinlupa wanted more than a record of milestones. The book had to capture a community that still dares to \"Dream Big\" — tracing three decades of rapid urbanization from humble municipality to a highly urbanized city, while speaking to residents, business partners, and visitors alike.",
+    approach:
+      "We structured the volume as both retrospective and blueprint, organized into five curated chapters: the historic transition to cityhood, the city's ambitious landmark projects, its adaptability in a digital era, the people at the heart of its progress, and its roadmap toward a resilient, ecologically balanced future.",
+    designSolution:
+      "The design moves between archival record and civic celebration — pairing documentary and aspirational photography, from the glowing skyline at dusk to the energy of local neighborhoods, with editorial typography that gives each chapter its own rhythm. The result is a volume that honors the past thirty years while looking squarely toward the horizon.",
+    outcome:
+      "Moving Forward became the City Government of Muntinlupa's centerpiece for its cityhood anniversary — a tribute to the people who make the city home, and an invitation to every reader to take pride in how far it has come and remain ready for what's next.",
+    awards: [],
+    narrative: [
+      "Muntinlupa's 30th cityhood anniversary called for a book that was part retrospective and part blueprint — a collective journal of a community that keeps daring to dream big.",
+      "We built the volume around five chapters, moving from the city's transition to cityhood through its ambitions, adaptability, people, and its roadmap for a resilient future.",
+      "The finished book is a visual celebration of the journey to cityhood — a reminder of how far the city has come, and a tribute to the people who make it home.",
+    ],
+    hero: "/covers/mf-city.jpg",
+    cardImage: "/covers/mf-city.jpg",
+    gallery: [
+      {
+        src: "/covers/munti.jpg",
+        caption: "Cover — Moving Forward: Celebrating Muntinlupa City's 30th Anniversary",
+        size: "full",
+      },
+      {
+        src: "/covers/munti-book-1.jpg",
+        caption: "Interior spreads — a community's journey across five chapters",
+        size: "half",
+      },
+    ],
+    relatedProjects: ["bcda-one-clark-annual-report", "dlsu-centennial"],
+  },
 ];
 
 // ─── Pillars ──────────────────────────────────────────────────────────────────
@@ -685,7 +733,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "BG Hernandez",
-    role: "VP Creative and Innovation Director",
+    role: "Chief Creative and Innovation Officer",
     image: "/team/bg.png",
     bio: [
       "BG is the lead visual strategist for Studio 5 Designs. He is a certified Design Thinking practitioner and a multi-disciplined graphic designer with over 30 years of experience.",
@@ -726,6 +774,9 @@ export type Service = {
   copy: string;
   visual: string;
   visualCaption: string;
+  /** Optional Services-page-only image + caption. Falls back to `visual`/`visualCaption`. */
+  servicesVisual?: string;
+  servicesCaption?: string;
   /** Specific offerings under this practice area (shown on the /services page). */
   offerings?: string[];
 };
@@ -745,6 +796,8 @@ export const services: Service[] = [
     ],
     visual: "/covers/mgen-cover.jpg",
     visualCaption: "MGen — Shaping the Country's Energy Future, 2023 Annual Report",
+    servicesVisual: "/covers/mbtc-ar-cover.jpg",
+    servicesCaption: "Metrobank — 2024 Annual and Sustainability Report",
   },
   {
     id: "heritage-books",
@@ -760,6 +813,9 @@ export const services: Service[] = [
     ],
     visual: "/covers/yaman-book.jpg",
     visualCaption: "BSP — YAMAN: History and Heritage in Philippine Money",
+    servicesVisual: "/covers/mf-city.jpg",
+    servicesCaption:
+      "City Government of Muntinlupa — Moving Forward: Celebrating Muntinlupa City's 30th Anniversary",
   },
   {
     id: "brand-identity",
@@ -776,21 +832,26 @@ export const services: Service[] = [
     ],
     visual: "/covers/smgp-identity-a.jpg",
     visualCaption: "San Miguel Global Power — Brand System",
+    servicesVisual: "/covers/artpetron-logo.jpg",
+    servicesCaption: "Petron — ArtPetron Logo",
   },
   {
     id: "editorial",
-    title: "Editorial, Copywriting & Production",
-    tagline: "From the first draft to the finished copy on press.",
+    title: "Corporate and Marketing Collaterals",
+    tagline: "The everyday pieces that carry a brand the furthest.",
     copy:
-      "Good design without good writing is a publication that looks right but reads wrong. We write and edit the manuscripts, manage the print production, specify the paper stocks and finishes, and supervise every proof — so the physical object that arrives matches the intention behind it.",
+      "A brand lives in the things people hold — the calendar on a desk, the brochure in a boardroom, the gift that marks an occasion. We design the corporate and marketing collaterals that keep an organization's identity consistent and considered across every touchpoint, with the same editorial care and production rigor we bring to a landmark book.",
     offerings: [
-      "Editorial Direction",
-      "Copywriting & Manuscript Development",
-      "Photography Curation",
+      "Calendars & Corporate Giveaways",
+      "Brochures & Marketing Materials",
+      "Event & Campaign Collaterals",
+      "Copywriting & Editorial Direction",
       "Print Production Management",
     ],
-    visual: "/covers/editorial-1.jpg",
-    visualCaption: "The hands and craft behind every finished page",
+    visual: "/covers/inlife-calendar.jpg",
+    visualCaption: "InLife — In Pursuit of Purpose: 2025 Desk Calendar",
+    servicesVisual: "/covers/alsons-calendar.jpg",
+    servicesCaption: "Alcantara Group — Enchanted Waters: 2026 Desk Calendar",
   },
 ];
 

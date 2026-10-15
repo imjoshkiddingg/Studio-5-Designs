@@ -15,7 +15,7 @@ export default function HomePage() {
       <CaseStudyPreviews />
       <Testimonials />
       <Services />
-      <ImageDivider src="/people.jpg" alt="The people behind Studio 5 Designs" />
+      <ImageDivider src="/divider.jpg" alt="" />
       <About />
       <Pillars />
     </>

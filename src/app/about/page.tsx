@@ -21,7 +21,7 @@ export default function AboutPage() {
         intro="We give those stories a voice — bridging the gap between vision and values through publications, brand identities, and visual records."
       />
 
-      <ImageDivider src="/people.jpg" alt="The people behind Studio 5 Designs" />
+      <ImageDivider src="/divider.jpg" alt="" />
 
       <section className="py-20 md:py-28">
         <div className="container-editorial grid gap-12 md:grid-cols-12">

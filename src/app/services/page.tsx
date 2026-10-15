@@ -28,15 +28,15 @@ export default function ServicesPage() {
                 <Reveal className={flip ? "md:order-2" : ""}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-line">
                     <Image
-                      src={service.visual}
-                      alt={service.visualCaption}
+                      src={service.servicesVisual ?? service.visual}
+                      alt={service.servicesCaption ?? service.visualCaption}
                       fill
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="object-cover"
                     />
                   </div>
                   <p className="mt-3 text-xs uppercase tracking-[0.15em] text-muted">
-                    {service.visualCaption}
+                    {service.servicesCaption ?? service.visualCaption}
                   </p>
                 </Reveal>
 
