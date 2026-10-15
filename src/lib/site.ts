@@ -15,7 +15,7 @@ export const siteConfig = {
   shortName: "Studio 5",
   tagline: "Where Purpose Finds Form",
   email: "hello@studio5designs.com",
-  emailSecondary: "rortega.studio5@gmail.com",
+  emailSecondary: "josh@hellostudio5designs.com",
   phone: "+63 8895 4040",
   address: {
     lines: [

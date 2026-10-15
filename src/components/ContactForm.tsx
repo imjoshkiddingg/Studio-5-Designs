@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Check, Loader2 } from "lucide-react";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 const fields = [
   { id: "fullName", label: "Full Name", type: "text", autoComplete: "name", required: true },
@@ -15,12 +15,47 @@ const fields = [
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate submission; wire to an API route or form service in production.
-    setTimeout(() => setStatus("success"), 900);
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      fullName: formData.get("fullName"),
+      contactNumber: formData.get("contactNumber"),
+      email: formData.get("email"),
+      organization: formData.get("organization"),
+      message: formData.get("message"),
+      company_website: formData.get("company_website"), // honeypot
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMessage(
+          data.error ?? "Something went wrong. Please try again."
+        );
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setErrorMessage(
+        "We couldn't reach the server. Please check your connection and try again."
+      );
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -45,7 +80,7 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div className="grid gap-6 sm:grid-cols-2">
         {fields.map((field) => (
-          <div key={field.id} className={field.id === "email" || field.id === "organization" ? "sm:col-span-1" : "sm:col-span-1"}>
+          <div key={field.id}>
             <label
               htmlFor={field.id}
               className="mb-2 block text-sm font-medium text-ink"
@@ -82,6 +117,24 @@ export function ContactForm() {
           className="w-full resize-none rounded-lg border border-line bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-muted/60 focus:border-ink"
         />
       </div>
+
+      {/* Honeypot — hidden from users, catches bots. */}
+      <div aria-hidden="true" className="hidden">
+        <label htmlFor="company_website">Company website</label>
+        <input
+          id="company_website"
+          name="company_website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
+      {status === "error" && (
+        <p role="alert" className="text-sm text-accent">
+          {errorMessage}
+        </p>
+      )}
 
       <button
         type="submit"
