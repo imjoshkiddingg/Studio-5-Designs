@@ -343,30 +343,6 @@ function CaseStudyView({ data }: { data: CaseStudy }) {
         </div>
       </div>
 
-      {/* ── Awards ───────────────────────────────────────────────── */}
-      {data.awards.length > 0 && (
-        <div className="border-b border-line py-16 md:py-20">
-          <div className="container-editorial">
-            <Reveal>
-              <p className="eyebrow">Awards & Recognition</p>
-            </Reveal>
-            <ul className="mt-8 space-y-4">
-              {data.awards.map((award, i) => (
-                <Reveal as="li" key={award} delay={i * 0.05}>
-                  <div className="flex items-start gap-4 border-b border-line pb-4 last:border-0">
-                    <Award
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                      strokeWidth={1.5}
-                    />
-                    <p className="text-ink">{award}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-
       {/* ── Client quote ─────────────────────────────────────────── */}
       {data.quote && (
         <div className="border-b border-line bg-ink-deep py-20 text-canvas md:py-28">

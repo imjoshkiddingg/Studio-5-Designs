@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Facebook, Linkedin } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -73,6 +73,26 @@ export function Footer() {
                 className="text-white/70 transition-colors hover:text-white"
               >
                 {siteConfig.phone}
+              </a>
+            </div>
+            <div className="mt-6 flex items-center gap-4">
+              <a
+                href="https://www.facebook.com/studio5designs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-white/70 transition-colors hover:text-white"
+              >
+                <Facebook className="h-5 w-5" strokeWidth={1.6} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/studio-5-designs-inc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/70 transition-colors hover:text-white"
+              >
+                <Linkedin className="h-5 w-5" strokeWidth={1.6} />
               </a>
             </div>
           </div>

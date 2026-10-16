@@ -4,7 +4,7 @@ import { Reveal } from "./Reveal";
 
 export function Partners() {
   return (
-    <section className="border-t border-line py-24 md:py-32">
+    <section className="border-t border-line py-16 md:py-24">
       <div className="container-editorial">
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">

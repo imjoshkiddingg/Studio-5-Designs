@@ -24,7 +24,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink-deep/85 via-ink-deep/65 to-ink-deep/40" />
       </div>
 
-      <div className="container-editorial relative pb-20 pt-16 md:pb-32 md:pt-24">
+      <div className="container-editorial relative pb-16 pt-16 md:pb-24 md:pt-24">
         <h1 className="max-w-5xl font-serif text-display-xl text-canvas">
           {["Designed to last.", "Built to matter."].map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.12em]">

@@ -17,7 +17,7 @@ export function CaseStudyPreviews() {
   if (!featured) return null;
 
   return (
-    <section className="border-t border-line py-24 md:py-32">
+    <section className="border-t border-line py-16 md:py-24">
       <div className="container-editorial">
         {/* Section header */}
         <div className="flex flex-wrap items-end justify-between gap-6">

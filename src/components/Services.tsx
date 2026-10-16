@@ -13,7 +13,7 @@ export function Services() {
   const current = services[active] ?? services[0];
 
   return (
-    <section id="services" className="border-t border-line py-24 md:py-32">
+    <section id="services" className="border-t border-line py-16 md:py-24">
       <div className="container-editorial">
         <p className="eyebrow">Core Practice Areas</p>
         <h2 className="mt-5 max-w-2xl font-serif text-display-md text-ink">

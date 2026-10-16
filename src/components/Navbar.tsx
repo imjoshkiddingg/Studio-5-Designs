@@ -33,7 +33,7 @@ export function Navbar() {
       router.push(href);
       setDrawerOpen(false);
       setPendingHref(null);
-    }, 280);
+    }, 320);
   }
 
   const results = useMemo(() => searchSite(query), [query]);

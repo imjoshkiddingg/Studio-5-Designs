@@ -7,7 +7,7 @@ export function Testimonials() {
   if (!testimonials.length) return null;
 
   return (
-    <section className="border-t border-line py-24 md:py-32">
+    <section className="border-t border-line py-16 md:py-24">
       <div className="container-editorial">
         <Reveal>
           <p className="eyebrow">In Their Words</p>

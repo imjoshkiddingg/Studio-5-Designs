@@ -4,7 +4,7 @@ import { PillarCard } from "./PillarCard";
 
 export function Pillars() {
   return (
-    <section className="border-t border-line bg-ink-deep py-24 text-canvas md:py-32">
+    <section className="border-t border-line bg-ink-deep py-16 text-canvas md:py-24">
       <div className="container-editorial">
         <Reveal>
           <p className="eyebrow text-white/50">Strategic Pillars</p>
