@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Selected publications, brand systems, and heritage volumes across finance, FMCG, education, power, and government sectors.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 export default function WorkPage() {

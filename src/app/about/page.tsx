@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "A human-centered design agency bridging the gap between vision and values — crafting publications, identities, and visual records that leave a lasting legacy.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

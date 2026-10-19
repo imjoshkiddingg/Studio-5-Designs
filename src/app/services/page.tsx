@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Annual & sustainability reports, commemorative books, brand identity, and end-to-end editorial and production management.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

@@ -27,11 +27,17 @@ export function generateMetadata({ params }: Params): Metadata {
     return {
       title: `${entry.data.project} — ${entry.data.client}`,
       description: entry.data.context,
+      alternates: {
+        canonical: `/work/${params.slug}`,
+      },
     };
   }
   return {
     title: `${entry.data.title} — ${entry.data.client}`,
     description: entry.data.summary,
+    alternates: {
+      canonical: `/work/${params.slug}`,
+    },
   };
 }
 
