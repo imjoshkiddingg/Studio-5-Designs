@@ -32,6 +32,38 @@ npm start
 Optimized for [Vercel](https://vercel.com). Import the repository and Vercel
 auto-detects Next.js — no extra configuration required.
 
+## IndexNow
+
+`scripts/indexnow.mjs` pings [IndexNow](https://www.indexnow.org/) (Bing and
+other participating engines) to tell them URLs have changed, so they recrawl
+and reindex sooner. The verification key lives at
+`public/TfkfQ4bUJbQq4c5hyZiUkpRQf955b1LC.txt` and is served at
+`https://www.hellostudio5designs.com/TfkfQ4bUJbQq4c5hyZiUkpRQf955b1LC.txt`
+(the key is not a secret).
+
+Submit the whole sitemap:
+
+```bash
+npm run indexnow
+```
+
+It only runs in production (`NODE_ENV=production` or `VERCEL_ENV=production`).
+To run locally, add `--force`:
+
+```bash
+npm run indexnow -- --force
+```
+
+Submit specific pages (space-separate multiple URLs; add `--force` locally):
+
+```bash
+npm run indexnow -- https://www.hellostudio5designs.com/work/inlife-kairos
+npm run indexnow -- --force https://www.hellostudio5designs.com/work/inlife-kairos
+```
+
+This is **not** run automatically on build or deploy — run it manually after
+each production deploy.
+
 ## Notes
 
 - The contact form currently simulates submission on the client. Wire
